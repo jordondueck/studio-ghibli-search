@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import Films from './Films';
 import People from './People';
-import headerPic from './images/ghibli-logo.png';
+import Locations from './Locations';
+import Species from './Species';
+import Vehicles from './Vehicles';
+import headerPic from './images/ghibli-header.png';
 import footerPic from './images/ghibli-char-group.png';
 
 class GhibliForm extends Component {
@@ -32,6 +35,12 @@ class GhibliForm extends Component {
       renderPageClass = Films;
     } else if (this.state.checkboxGroup[1]) {
       renderPageClass = People;
+    } else if (this.state.checkboxGroup[2]) {
+      renderPageClass = Locations;
+    } else if (this.state.checkboxGroup[3]) {
+      renderPageClass = Species;
+    } else if (this.state.checkboxGroup[4]) {
+      renderPageClass = Vehicles;
     }
     this.setState({
       showForm: false,
@@ -50,10 +59,8 @@ class GhibliForm extends Component {
       backgroundColor: '#FFFFFF',
       color: '#000000',
       textAlign: 'center',
-      flexWrap: 'wrap',
       fontWeight: 'bold',
-      fontSize: 24,
-      padding: 1,
+      fontSize: 24
     }
     const mainFormStyle = {
       position: "relative",
@@ -81,7 +88,8 @@ class GhibliForm extends Component {
     const imageStyle = {
       position: "absolute",
       bottom: "0px",
-      right: "0px"
+      right: "0px",
+      marginBottom: "0px"
     }
     
     if(this.state.showForm) {
@@ -89,8 +97,8 @@ class GhibliForm extends Component {
         <div style={{position: "relative"}}>
           <div style={formTitleStyle}>
             <h1>Studio Ghibli Search</h1>
+            <img style={{position: "absolute", top: "0px", right: "0px", height: "25%", width: "25%"}} src={headerPic}/>
             <h2>Select a Category</h2>
-            <img style={{position: "absolute", top: "0px", left: "0px", height: "20%", width: "20%"}} src={headerPic}/>
           </div>
           <div style={bgFormStyle}>
             <form style={mainFormStyle}>
@@ -135,9 +143,9 @@ class GhibliForm extends Component {
             <br /><br />
             <br /><br />
             <br /><br />
-            <img style={imageStyle} src={footerPic}/>
+            
           </div>
-          
+          <img style={imageStyle} src={footerPic}/>
         </div>
       );
     } else {

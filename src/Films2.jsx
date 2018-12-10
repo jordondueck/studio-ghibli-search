@@ -3,14 +3,32 @@ import React from 'react';
 const Films2 = (props) => {
   const siteStyle = {
     fontFamily: 'Calibri Light',
-    padding: 2
+    padding: 12,
+    width: 360,
+    borderRadius: 12,
+    backgroundColor: '#F1F1F1',
+    color: '#000000',
+    position: "relative",
+    margin: "auto",
+    marginBottom: 8
   }
 
   return (
     <div style={siteStyle}>
       <li>
-        {props.title}
-      </li>
+        <b>Title:</b> {props.title}
+        <br />
+        <b>Description:</b> {props.description}
+        <br />
+        <b>Director:</b> {props.director}
+        <br />
+        <b>Producer:</b> {props.producer}
+        <br />
+        <b>Release Date:</b> {props.release_date}
+        <br />
+        <b>Rotten Tomatoes Score:</b> {props.rt_score} out of 100
+        <br />
+      </li> 
     </div>
   )
 }

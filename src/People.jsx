@@ -31,21 +31,24 @@ class People extends Component {
   }
 
   render() {
-    const filmsPageStyle = {
-      //height: 200,
+    const peoplePageStyle = {
       width: 400,
-      padding: 0,
       backgroundColor: '#FFFFFF',
-      boxShadow: '0px 0px 5px #666'
+      boxShadow: '0px 0px 5px #666',
+      margin: 'auto',
+      padding: 10,
+      borderRadius: 25,
+      color: '#000000'
     }
     return (
-      <div style={filmsPageStyle}> 
+      <div style={peoplePageStyle}> 
         <Title/>
           <ol>
             {this.state.people.map(person=>
-              <People2 name={person.name} gender={person.gender}
-                    age={person.age} eye_color={person.eye_color}
-                    hair_color={person.hair_color}/>
+              <People2 key={person.id} id={person.id} name={person.name}
+                      gender={person.gender} age={person.age}
+                      eye_color={person.eye_color} hair_color={person.hair_color}
+                      films={person.films}/>
             )}
           </ol>
       </div>
