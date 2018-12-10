@@ -32,20 +32,23 @@ class Films extends Component {
 
   render() {
     const filmsPageStyle = {
-      // height: 200,
       width: 400,
-      padding: 0,
       backgroundColor: '#FFFFFF',
-      boxShadow: '0px 0px 5px #666'
+      boxShadow: '0px 0px 5px #666',
+      margin: 'auto',
+      padding: 10,
+      borderRadius: 25,
+      color: '#000000'
     }
     return (
       <div style={filmsPageStyle}> 
         <Title/>
-          <ol>
+          <ol style={{listStyle: 'none', paddingLeft: 0}}>
             {this.state.films.map(film=>
-              <Films2 key={film.episode_id} title={film.title} episode_id={film.episode_id}
-                    opening_crawl={film.opening_crawl} director={film.director}
-                    producer={film.producer} release_date={film.release_date}/>
+              <Films2 key={film.id} id={film.id} title={film.title}
+                    description={film.description} director={film.director}
+                    producer={film.producer} release_date={film.release_date}
+                    rt_score={film.rt_score}/>
             )}
           </ol>
       </div>

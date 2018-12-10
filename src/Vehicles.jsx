@@ -31,21 +31,23 @@ class Vehicles extends Component {
   }
 
   render() {
-    const filmsPageStyle = {
-      //height: 200,
+    const vehiclesPageStyle = {
       width: 400,
-      padding: 0,
       backgroundColor: '#FFFFFF',
-      boxShadow: '0px 0px 5px #666'
+      boxShadow: '0px 0px 5px #666',
+      margin: 'auto',
+      padding: 10,
+      borderRadius: 25,
+      color: '#000000'
     }
     return (
-      <div style={filmsPageStyle}> 
+      <div style={vehiclesPageStyle}> 
         <Title/>
           <ol>
-            {this.state.vehicles.map(person=>
-              <Vehicles2 name={person.name} gender={person.gender}
-                    age={person.age} eye_color={person.eye_color}
-                    hair_color={person.hair_color}/>
+            {this.state.vehicles.map(vehicle=>
+              <Vehicles2 key={vehicle.id} id={vehicle.id} name={vehicle.name}
+                    description={vehicle.description} vehicle_class={vehicle.vehicle_class}
+                    length={vehicle.length}/>
             )}
           </ol>
       </div>
