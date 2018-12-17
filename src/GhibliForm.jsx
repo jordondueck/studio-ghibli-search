@@ -113,7 +113,7 @@ class GhibliForm extends Component {
         <div>
           <div style={titleStyle}>
             <h1>Studio Ghibli Search</h1>
-            <img style={{position: 'absolute', top: '0px', right: '0px', height: '200px', width: '200px'}} src={headerPic} alt='Ghibli header'/>
+            <img style={{position: 'absolute', top: '0%', right: '0%', height: '200px', width: '200px'}} src={headerPic} alt='Ghibli header'/>
             <h2>Select a Category</h2>
           </div>
           <div style={bgFormStyle}>

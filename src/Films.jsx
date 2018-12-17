@@ -41,6 +41,14 @@ class Films extends Component {
   }
 
   render() {
+    const titleStyle = {
+      backgroundColor: '#FFFFFF',
+      color: '#000000',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      fontSize: 24,
+      fontFamily: 'Montserrat'
+    }
     const filmsPageStyle = {
       width: '40%',
       maxWidth: '300px',
@@ -78,9 +86,11 @@ class Films extends Component {
     if(this.state.showFilms) {
       return (
         <div>
-          <div style={filmsPageStyle}> 
+          <div style={titleStyle}>
             <Title/>
-            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center'}}>Films</h2>
+          </div>
+          <div style={filmsPageStyle}> 
+            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Films</h2>
             <br></br>
             <div style={buttonContainer}>
               <button style={buttonStyle} onClick={this.handleSubmitButton}>Back</button>

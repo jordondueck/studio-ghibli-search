@@ -41,6 +41,14 @@ class Locations extends Component {
   }
 
   render() {
+    const titleStyle = {
+      backgroundColor: '#FFFFFF',
+      color: '#000000',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      fontSize: 24,
+      fontFamily: 'Montserrat'
+    }
     const locationsPageStyle = {
       width: '40%',
       maxWidth: '300px',
@@ -78,9 +86,11 @@ class Locations extends Component {
     if(this.state.showLocations) {
       return (
         <div>
-          <div style={locationsPageStyle}> 
+          <div style={titleStyle}>
             <Title/>
-            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center'}}>Locations</h2>
+          </div>
+          <div style={locationsPageStyle}> 
+            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Locations</h2>
             <br></br>
             <div style={buttonContainer}>
               <button style={buttonStyle} onClick={this.handleSubmitButton}>Back</button>
