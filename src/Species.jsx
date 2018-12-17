@@ -41,6 +41,14 @@ class Species extends Component {
   }
 
   render() {
+    const titleStyle = {
+      backgroundColor: '#FFFFFF',
+      color: '#000000',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      fontSize: 24,
+      fontFamily: 'Montserrat'
+    }
     const speciesPageStyle = {
       width: '40%',
       maxWidth: '300px',
@@ -78,9 +86,11 @@ class Species extends Component {
     if(this.state.showSpecies) {
       return (
         <div>
-          <div style={speciesPageStyle}> 
+          <div style={titleStyle}>
             <Title/>
-            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center'}}>Species</h2>
+          </div>
+          <div style={speciesPageStyle}> 
+            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Species</h2>
             <br></br>
             <div style={buttonContainer}>
               <button style={buttonStyle} onClick={this.handleSubmitButton}>Back</button>

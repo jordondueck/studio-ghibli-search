@@ -41,6 +41,14 @@ class People extends Component {
   }
 
   render() {
+    const titleStyle = {
+      backgroundColor: '#FFFFFF',
+      color: '#000000',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      fontSize: 24,
+      fontFamily: 'Montserrat'
+    }
     const peoplePageStyle = {
       width: '40%',
       maxWidth: '300px',
@@ -78,9 +86,11 @@ class People extends Component {
     if(this.state.showPeople) {
       return (
         <div>
-          <div style={peoplePageStyle}> 
+          <div style={titleStyle}>
             <Title/>
-            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center'}}>People</h2>
+          </div>
+          <div style={peoplePageStyle}> 
+            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>People</h2>
             <br></br>
             <div style={buttonContainer}>
               <button style={buttonStyle} onClick={this.handleSubmitButton}>Back</button>

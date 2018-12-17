@@ -41,6 +41,14 @@ class Vehicles extends Component {
   }
 
   render() {
+    const titleStyle = {
+      backgroundColor: '#FFFFFF',
+      color: '#000000',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      fontSize: 24,
+      fontFamily: 'Montserrat'
+    }
     const vehiclesPageStyle = {
       width: '40%',
       maxWidth: '300px',
@@ -78,9 +86,11 @@ class Vehicles extends Component {
     if(this.state.showVehicles) {
       return (
         <div>
-          <div style={vehiclesPageStyle}> 
+          <div style={titleStyle}>
             <Title/>
-            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center'}}>Vehicles</h2>
+          </div>
+          <div style={vehiclesPageStyle}> 
+            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Vehicles</h2>
             <br></br>
               <div style={buttonContainer}>
                 <button style={buttonStyle} onClick={this.handleSubmitButton}>Back</button>
