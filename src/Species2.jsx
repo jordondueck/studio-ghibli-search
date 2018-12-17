@@ -4,12 +4,12 @@ const Species2 = (props) => {
   const siteStyle = {
     fontFamily: 'Calibri Light',
     padding: 12,
-    width: 360,
+    width: '90%',
+    maxWidth: '300px',
     borderRadius: 12,
     backgroundColor: '#F1F1F1',
     color: '#000000',
     position: "relative",
-    margin: "auto",
     marginBottom: 8
   }
 

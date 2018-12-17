@@ -1,0 +1,9 @@
+Studio Ghibli Search
+
+TODO:
+1. Add page title (e.g., films, people, etc.) to each page
+	- (COMPLETE)
+2. Add back button
+	- (COMPELTE)
+3. Add more forms
+	- (TODO)
