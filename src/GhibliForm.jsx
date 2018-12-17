@@ -55,49 +55,65 @@ class GhibliForm extends Component {
   }
 
   render() {
-    const formTitleStyle = {
+    const titleStyle = {
       backgroundColor: '#FFFFFF',
       color: '#000000',
       textAlign: 'center',
       fontWeight: 'bold',
-      fontSize: 24
+      fontSize: 24,
+      fontFamily: 'Montserrat'
     }
     const mainFormStyle = {
-      position: "relative",
       margin: 'auto',
-      width: 400,
-      padding: 10,
+      width: '40%',
+      maxWidth: '300px',
+      padding: '1%',
       borderRadius: 25,
       backgroundColor: '#F1F1F1',
-      color: '#000000'
+      color: '#000000',
+      fontSize: 18,
+      fontFamily: 'Calibri Light'
     }
     const bgFormStyle = {
-      position: "relative",
       backgroundColor: '#FFFFFF',
       color: '#000000',
       height: '100%',
-      padding: 10
+      padding: '3%'
+    }
+    const buttonContainer = {
+      textAlign: 'center'
     }
     const buttonStyle = {
       backgroundColor: '#FFFFFF',
       color: '#000000',
       borderRadius: 50,
       borderColor: '#000000',
-      padding: 4
+      padding: '1%',
+      width: '35%',
+      display: 'inline-block',
+      fontFamily: 'Montserrat'
     }
-    const imageStyle = {
-      position: "absolute",
-      bottom: "0px",
-      right: "0px",
-      marginBottom: "0px"
+    const footerImageStyle = {
+      float: 'right',
+      padding: '3% 0 0 0'
     }
-    
+    const footerStyle = {
+      minHeight: '2%',
+      width: '100%',
+      backgroundColor: '#F1F1F1',
+      bottom: 0,
+      float: 'right',
+      textAlign: 'center',
+      fontSize: '14px',
+      fontFamily: 'Montserrat',
+      position: 'fixed'
+    }
     if(this.state.showForm) {
       return (
-        <div style={{position: "relative"}}>
-          <div style={formTitleStyle}>
+        <div>
+          <div style={titleStyle}>
             <h1>Studio Ghibli Search</h1>
-            <img style={{position: "absolute", top: "0px", right: "0px", height: "25%", width: "25%"}} src={headerPic}/>
+            <img style={{position: 'absolute', top: '0px', right: '0px', height: '200px', width: '200px'}} src={headerPic} alt='Ghibli header'/>
             <h2>Select a Category</h2>
           </div>
           <div style={bgFormStyle}>
@@ -133,19 +149,19 @@ class GhibliForm extends Component {
                   checked={this.state.checkboxGroup[4]} onChange={this.handleBoxChecked}/>
                 </label>
                 <br /><br />
+                <div style={buttonContainer}>
                 <button style={buttonStyle} onClick={this.handleSubmitButton}>Submit</button>
+                </div>
               </fieldset>
             </form>
-            <br /><br />
-            <br /><br />
-            <br /><br />
-            <br /><br />
-            <br /><br />
-            <br /><br />
-            <br /><br />
-            
           </div>
-          <img style={imageStyle} src={footerPic}/>
+          <div>
+            <img style={footerImageStyle} src={footerPic} alt='Ghibli Footer'/>
+          </div>
+          <div style={footerStyle}>
+            Copyright &copy; 2018 Jordon Dueck
+          </div>
+          
         </div>
       );
     } else {
