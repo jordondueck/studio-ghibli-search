@@ -1,0 +1,156 @@
+.containerStyle {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 2fr 1fr 1fr auto;
+  font-family: "Montserrat";
+  text-align: center;
+  background: linear-gradient(115deg, #373b44, #4286f4);
+}
+
+.containerStyle2 {
+  display: grid;
+  grid-template-rows: auto 2fr 1fr 1fr auto;
+}
+
+/* Header */
+.headerStyle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerSpaceStyle,
+.headerImageStyle {
+  width: 200px;
+  height: 200px;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* Content */
+.contentStyle {
+  align-self: center;
+  color: #000000;
+  background: #0000;
+}
+
+.formStyle {
+  width: 50%;
+  max-width: 600px;
+  height: 50%;
+  max-height: 500px;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 25px;
+  background: #f1f1f1;
+  color: #000000;
+  font-size: 1.2rem;
+  font-family: "Calibri Light";
+  text-align: left;
+}
+
+.formTitleStyle {
+  text-align: center;
+}
+
+ul {
+  padding: 0.2rem 1rem;
+  list-style: none;
+}
+
+.buttonContainer {
+  text-align: center;
+}
+
+.buttonStyle {
+  background: #FFFFFF;
+  color: #000000;
+  border-radius: 25px;
+  border-color: #000000;
+  padding: 1%;
+  width: 35%;
+  font-family: "Montserrat";
+}
+
+/* Footer */
+.footerStyle {
+  width: 100%;
+}
+
+.footerImageStyle {
+  width: 800px;
+  justify-self: end;
+  align-self: end;
+}
+
+/* Width Media Queries */
+@media (max-width: 899px) {
+  li {
+    font-size: 0.8rem;
+  }
+
+  .headerStyle {
+    font-size: 1rem;
+  }
+  .headerSpaceStyle,
+  .headerImageStyle {
+    width: 125px;
+    height: 125px;
+  }
+  .footerImageStyle {
+    width: 600px;
+  }
+}
+
+@media (max-width: 599px) {
+  .headerStyle {
+    padding: 1rem 0;
+    font-size: 0.8rem;
+  }
+  .headerSpaceStyle,
+  .headerImageStyle {
+    width: 100px;
+    height: 100px;
+  }
+  .footerImageStyle {
+    width: 500px;
+  }
+}
+
+@media (max-width: 501px) {
+  .headerImageStyle,
+  .headerSpaceStyle {
+    width: 0px;
+  }
+  .buttonStyle {
+    font-size: 0.8rem;
+  }
+  .footerImageStyle {
+    width: 200px;
+  }
+}
+
+@media (max-width: 399px) {
+  .buttonStyle {
+    font-size: 0.6rem;
+  }
+}
+
+/* Height Media Queries */
+@media (max-height: 600px) {
+  p {
+    margin: 0;
+  }
+  .headerImageStyle,
+  .headerSpaceStyle {
+    width: 0px;
+  }
+  .footerImageStyle {
+    height: 0px;
+  }
+}
