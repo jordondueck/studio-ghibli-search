@@ -4,8 +4,8 @@ import People from "./People";
 import Locations from "./Locations";
 import Species from "./Species";
 import Vehicles from "./Vehicles";
-import headerPic from "./images/ghibli-header.png";
-import footerPic from "./images/ghibli-char-group.png";
+// import headerPic from "./images/ghibli-header.png";
+// import footerPic from "./images/ghibli-char-group2.png";
 import "./styles/Container.css";
 
 class GhibliForm extends Component {
@@ -59,9 +59,7 @@ class GhibliForm extends Component {
       return (
         <div className="containerStyle">
           <header className="headerStyle">
-            <div className="headerSpaceStyle"/>
             <h1>Studio Ghibli Search</h1>
-            <img className="headerImageStyle" src={headerPic} alt='Ghibli header'/>
           </header>
           <section className="contentStyle">
             <form className="formStyle">
@@ -145,8 +143,7 @@ class GhibliForm extends Component {
               </fieldset>
             </form>
           </section>
-          <div></div>
-          <img className="footerImageStyle" src={footerPic} alt='Ghibli Footer'/>
+          {/* <img className="footerImageStyle" src={footerPic} alt='Ghibli Footer'/> */}
           <footer className="footerStyle">
             <p>Copyright &copy; 2019 Jordon Dueck</p>
           </footer>

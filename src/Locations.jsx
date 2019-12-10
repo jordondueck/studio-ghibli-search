@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Title from './Title/Title';
+import Title from './Title';
 import Locations2 from './Locations2';
 import GhibliForm from './GhibliForm';
 
