@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Species2 from './Species2';
-import GhibliForm from '../containers/GhibliForm';
+import App from '../containers/App';
 
 class Species extends Component {
   constructor(props) {
@@ -99,7 +99,7 @@ class Species extends Component {
         </div>
       )
     } else {
-      return <GhibliForm />
+      return <App />
     }
   }
 }

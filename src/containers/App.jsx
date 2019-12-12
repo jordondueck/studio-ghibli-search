@@ -1,53 +1,37 @@
 import React, { Component } from "react";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Films from "../components/Films";
-import People from "../components/People";
-import Locations from "../components/Locations";
-import Species from "../components/Species";
-import Vehicles from "../components/Vehicles";
-import "./Container.css"
+import Results from "../components/Results";
+import "./App.css"
 
-class GhibliForm extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.handleBoxChecked = this.handleBoxChecked.bind(this);
     this.handleSubmitButton = this.handleSubmitButton.bind(this);
     this.state = {
       checkboxGroup: [false, false, false, false, false, false],
-      selectedCategory: [Films, People, Locations, Species, Vehicles],
-      showForm: true,
-      renderPage: ""
+      categoryArr: ['Films', 'People', 'Locations', 'Species', 'Vehicles'],
+      selectedCategory: App,
+      showForm: true
     };
   }
 
   handleBoxChecked(event) {
-    let boxChecked = new Array(10);
+    let boxChecked = new Array(5);
     boxChecked.fill(false);
     boxChecked[event.target.value] = event.target.checked;
+    let categoryIndex = event.target.value;
     this.setState({
-      checkboxGroup: boxChecked
+      checkboxGroup: boxChecked,
+      selectedCategory: this.state.categoryArr[categoryIndex]
     });
   }
 
   handleSubmitButton(event) {
     event.preventDefault();
-    //let renderPageString = event.target.value;
-    let renderPageClass;
-    if (this.state.checkboxGroup[0]) {
-      renderPageClass = Films;
-    } else if (this.state.checkboxGroup[1]) {
-      renderPageClass = People;
-    } else if (this.state.checkboxGroup[2]) {
-      renderPageClass = Locations;
-    } else if (this.state.checkboxGroup[3]) {
-      renderPageClass = Species;
-    } else if (this.state.checkboxGroup[4]) {
-      renderPageClass = Vehicles;
-    }
     this.setState({
-      showForm: false,
-      renderPage: renderPageClass
+      showForm: false
     });
   }
 
@@ -149,11 +133,11 @@ class GhibliForm extends Component {
     } else {
       return (
         <div className="container">
-          <this.state.renderPage />;
+          <Results category={this.state.selectedCategory}/>
         </div>
       )
     }
   }
 }
 
-export default GhibliForm;
+export default App;

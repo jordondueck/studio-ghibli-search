@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import People2 from './People2';
-import GhibliForm from '../containers/GhibliForm';
-import "../containers/Container.css"
+import App from '../containers/App';
+import "../containers/App.css"
 
 class People extends Component {
   constructor(props) {
@@ -101,7 +101,7 @@ class People extends Component {
         </div>
       )
     } else {
-      return <GhibliForm />
+      return <App />
     }
   }
 }

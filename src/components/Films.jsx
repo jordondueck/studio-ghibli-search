@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Films2 from './Films2';
-import GhibliForm from '../containers/GhibliForm';
+import App from '../containers/App';
 
 class Films extends Component {
   constructor(props) {
@@ -88,7 +88,7 @@ class Films extends Component {
         </div>
       )
     } else {
-      return <GhibliForm />
+      return <App />
     }
   }
 }

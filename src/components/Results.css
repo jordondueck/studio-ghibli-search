@@ -1,0 +1,48 @@
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-family: "Montserrat";
+  text-align: center;
+}
+
+.titleStyle {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+}
+
+.newFormStyle {
+  width: 50%;
+  min-width: 120px;
+  max-width: 400px;
+  margin: auto;
+  padding: 1rem;
+  border: 2px solid #233567;
+  border-radius: 25px;
+  box-shadow: 2px 2px 10px #000000;
+  background: #f1f1f1;
+  font-size: 1.2rem;
+  font-family: "Calibri Light";
+  text-align: center;
+}
+
+ol {
+  padding: 0.2rem 0.5rem;
+  list-style: none;
+}
+
+.buttonContainer {
+  text-align: center;
+}
+
+.buttonStyle {
+  background: #ffffff;
+  color: #000000;
+  border-radius: 25px;
+  border-color: #000000;
+  padding: 1%;
+  width: 35%;
+  min-width: 70px;
+  font-family: "Montserrat";
+}
