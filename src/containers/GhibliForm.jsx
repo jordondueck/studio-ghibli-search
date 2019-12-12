@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Title from '../components/Title';
 import Films from "../components/Films";
 import People from "../components/People";
 import Locations from "../components/Locations";
@@ -58,9 +59,7 @@ class GhibliForm extends Component {
     if (this.state.showForm) {
       return (
         <div className="containerStyle">
-          <header className="headerStyle">
-            <h1>Studio Ghibli Search</h1>
-          </header>
+          <Title />
           <section className="contentStyle">
             <form className="formStyle">
               <fieldset>

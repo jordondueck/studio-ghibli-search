@@ -1,3 +1,16 @@
+html, body, #root {
+  height: 100%;
+}
+
+html {
+  /* Fallback background */
+  background: #364b6d;  
+  background: linear-gradient(115deg, #373b44, #4286f4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 body {
   margin: 0;
   padding: 0;
