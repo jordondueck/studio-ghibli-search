@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Title from './Title';
+import Header from './Header';
+import Footer from './Footer';
 import Films2 from './Films2';
 import GhibliForm from '../containers/GhibliForm';
 
@@ -41,14 +42,6 @@ class Films extends Component {
   }
 
   render() {
-    const titleStyle = {
-      backgroundColor: '#FFFFFF',
-      color: '#000000',
-      textAlign: 'center',
-      fontWeight: 'bold',
-      fontSize: 24,
-      fontFamily: 'Montserrat'
-    }
     const filmsPageStyle = {
       width: '40%',
       maxWidth: '300px',
@@ -72,23 +65,10 @@ class Films extends Component {
       display: 'inline-block',
       fontFamily: 'Montserrat'
     }
-    const footerStyle = {
-      minHeight: '2%',
-      width: '100%',
-      backgroundColor: '#FFFFFF',
-      bottom: 0,
-      float: 'right',
-      textAlign: 'center',
-      fontSize: '14px',
-      fontFamily: 'Montserrat',
-      position: 'fixed'
-    }
     if(this.state.showFilms) {
       return (
         <div>
-          <div style={titleStyle}>
-            <Title/>
-          </div>
+            <Header/>
           <div style={filmsPageStyle}> 
             <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Films</h2>
             <br></br>
@@ -104,9 +84,7 @@ class Films extends Component {
                 )}
               </ol>
           </div>
-          <div style={footerStyle}>
-            Copyright &copy; 2018 Jordon Dueck
-          </div>
+          <Footer />
         </div>
       )
     } else {

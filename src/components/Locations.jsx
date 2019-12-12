@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Title from './Title';
+import Header from './Header';
 import Locations2 from './Locations2';
 import GhibliForm from '../containers/GhibliForm';
 
@@ -41,14 +41,6 @@ class Locations extends Component {
   }
 
   render() {
-    const titleStyle = {
-      backgroundColor: '#FFFFFF',
-      color: '#000000',
-      textAlign: 'center',
-      fontWeight: 'bold',
-      fontSize: 24,
-      fontFamily: 'Montserrat'
-    }
     const locationsPageStyle = {
       width: '40%',
       maxWidth: '300px',
@@ -86,9 +78,7 @@ class Locations extends Component {
     if(this.state.showLocations) {
       return (
         <div>
-          <div style={titleStyle}>
-            <Title/>
-          </div>
+            <Header/>
           <div style={locationsPageStyle}> 
             <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Locations</h2>
             <br></br>

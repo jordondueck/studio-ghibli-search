@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import Title from '../components/Title';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import Films from "../components/Films";
 import People from "../components/People";
 import Locations from "../components/Locations";
 import Species from "../components/Species";
 import Vehicles from "../components/Vehicles";
-// import headerPic from "./images/ghibli-header.png";
-// import footerPic from "./images/ghibli-char-group2.png";
 import "./Container.css"
 
 class GhibliForm extends Component {
@@ -16,13 +15,15 @@ class GhibliForm extends Component {
     this.handleSubmitButton = this.handleSubmitButton.bind(this);
     this.state = {
       checkboxGroup: [false, false, false, false, false, false],
+      selectedCategory: [Films, People, Locations, Species, Vehicles],
       showForm: true,
       renderPage: ""
     };
   }
 
   handleBoxChecked(event) {
-    let boxChecked = this.state.checkboxGroup.slice();
+    let boxChecked = new Array(10);
+    boxChecked.fill(false);
     boxChecked[event.target.value] = event.target.checked;
     this.setState({
       checkboxGroup: boxChecked
@@ -59,7 +60,7 @@ class GhibliForm extends Component {
     if (this.state.showForm) {
       return (
         <div className="containerStyle">
-          <Title />
+          <Header />
           <section className="contentStyle">
             <form className="formStyle">
               <fieldset>
@@ -142,14 +143,15 @@ class GhibliForm extends Component {
               </fieldset>
             </form>
           </section>
-          {/* <img className="footerImageStyle" src={footerPic} alt='Ghibli Footer'/> */}
-          <footer className="footerStyle">
-            <p>Copyright &copy; 2019 Jordon Dueck</p>
-          </footer>
+          <Footer />
         </div>
       );
     } else {
-      return <this.state.renderPage />;
+      return (
+        <div className="container">
+          <this.state.renderPage />;
+        </div>
+      )
     }
   }
 }

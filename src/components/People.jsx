@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Title from './Title';
+import Header from './Header';
 import People2 from './People2';
 import GhibliForm from '../containers/GhibliForm';
 import "../containers/Container.css"
@@ -42,14 +42,6 @@ class People extends Component {
   }
 
   render() {
-    const titleStyle = {
-      backgroundColor: '#FFFFFF',
-      color: '#000000',
-      textAlign: 'center',
-      fontWeight: 'bold',
-      fontSize: 24,
-      fontFamily: 'Montserrat'
-    }
     const peoplePageStyle = {
       width: '40%',
       maxWidth: '300px',
@@ -87,9 +79,7 @@ class People extends Component {
     if(this.state.showPeople) {
       return (
         <div>
-          <div style={titleStyle}>
-            <Title/>
-          </div>
+            <Header/>
           <div style={peoplePageStyle}> 
             <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>People</h2>
             <br></br>
