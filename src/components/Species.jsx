@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import Title from './Title';
-import Films2 from './Films2';
-import GhibliForm from './GhibliForm';
+import Species2 from './Species2';
+import GhibliForm from '../containers/GhibliForm';
 
-class Films extends Component {
+class Species extends Component {
   constructor(props) {
     super(props);
     this.handleSubmitButton = this.handleSubmitButton.bind(this);
     this.state = {
-      films: [],
-      showFilms: true
+      species: [],
+      showSpecies: true
     };
   }
 
   componentDidMount() {
-    fetch('https://ghibliapi.herokuapp.com/films')
+    fetch('https://ghibliapi.herokuapp.com/species')
     .then(response=> this.handleHTTPErrors(response))
     .then(response=> response.json())
     .then(result=> {
       this.setState({
-        films: result
+        species: result
       });
     })
     .catch(error=> {
@@ -30,7 +30,7 @@ class Films extends Component {
   handleSubmitButton(event) {
     event.preventDefault();
     this.setState({
-      showFilms: false
+      showSpecies: false
     });
   }
 
@@ -49,7 +49,7 @@ class Films extends Component {
       fontSize: 24,
       fontFamily: 'Montserrat'
     }
-    const filmsPageStyle = {
+    const speciesPageStyle = {
       width: '40%',
       maxWidth: '300px',
       backgroundColor: '#FFFFFF',
@@ -83,29 +83,28 @@ class Films extends Component {
       fontFamily: 'Montserrat',
       position: 'fixed'
     }
-    if(this.state.showFilms) {
+    if(this.state.showSpecies) {
       return (
         <div>
           <div style={titleStyle}>
             <Title/>
           </div>
-          <div style={filmsPageStyle}> 
-            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Films</h2>
+          <div style={speciesPageStyle}> 
+            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Species</h2>
             <br></br>
             <div style={buttonContainer}>
               <button style={buttonStyle} onClick={this.handleSubmitButton}>Back</button>
             </div>
               <ol style={{listStyle: 'none', paddingLeft: 0}}>
-                {this.state.films.map(film=>
-                  <Films2 key={film.id} id={film.id} title={film.title}
-                        description={film.description} director={film.director}
-                        producer={film.producer} release_date={film.release_date}
-                        rt_score={film.rt_score}/>
+                {this.state.species.map(species=>
+                  <Species2 key={species.id} id={species.id} name={species.name}
+                        classification={species.classification} eye_colors={species.eye_colors}
+                        hair_colors={species.hair_colors}/>
                 )}
               </ol>
           </div>
           <div style={footerStyle}>
-            Copyright &copy; 2018 Jordon Dueck
+              Copyright &copy; 2018 Jordon Dueck
           </div>
         </div>
       )
@@ -115,4 +114,4 @@ class Films extends Component {
   }
 }
 
-export default Films;
+export default Species;

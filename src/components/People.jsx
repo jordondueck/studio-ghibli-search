@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Title from './Title';
 import People2 from './People2';
-import GhibliForm from './GhibliForm';
-import "./styles/Container.css";
+import GhibliForm from '../containers/GhibliForm';
+import "../containers/Container.css"
 
 class People extends Component {
   constructor(props) {

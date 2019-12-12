@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import Title from './Title';
-import Vehicles2 from './Vehicles2';
-import GhibliForm from './GhibliForm';
+import Locations2 from './Locations2';
+import GhibliForm from '../containers/GhibliForm';
 
-class Vehicles extends Component {
+class Locations extends Component {
   constructor(props) {
     super(props);
     this.handleSubmitButton = this.handleSubmitButton.bind(this);
     this.state = {
-      vehicles: [],
-      showVehicles: true
+      locations: [],
+      showLocations: true
     };
   }
 
   componentDidMount() {
-    fetch('https://ghibliapi.herokuapp.com/vehicles')
+    fetch('https://ghibliapi.herokuapp.com/locations')
     .then(response=> this.handleHTTPErrors(response))
     .then(response=> response.json())
     .then(result=> {
       this.setState({
-        vehicles: result
+        locations: result
       });
     })
     .catch(error=> {
@@ -30,7 +30,7 @@ class Vehicles extends Component {
   handleSubmitButton(event) {
     event.preventDefault();
     this.setState({
-      showVehicles: false
+      showLocations: false
     });
   }
 
@@ -49,7 +49,7 @@ class Vehicles extends Component {
       fontSize: 24,
       fontFamily: 'Montserrat'
     }
-    const vehiclesPageStyle = {
+    const locationsPageStyle = {
       width: '40%',
       maxWidth: '300px',
       backgroundColor: '#FFFFFF',
@@ -83,23 +83,24 @@ class Vehicles extends Component {
       fontFamily: 'Montserrat',
       position: 'fixed'
     }
-    if(this.state.showVehicles) {
+    if(this.state.showLocations) {
       return (
         <div>
           <div style={titleStyle}>
             <Title/>
           </div>
-          <div style={vehiclesPageStyle}> 
-            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Vehicles</h2>
+          <div style={locationsPageStyle}> 
+            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Locations</h2>
             <br></br>
-              <div style={buttonContainer}>
-                <button style={buttonStyle} onClick={this.handleSubmitButton}>Back</button>
-              </div>
+            <div style={buttonContainer}>
+              <button style={buttonStyle} onClick={this.handleSubmitButton}>Back</button>
+            </div>
               <ol style={{listStyle: 'none', paddingLeft: 0}}>
-                {this.state.vehicles.map(vehicle=>
-                  <Vehicles2 key={vehicle.id} id={vehicle.id} name={vehicle.name}
-                        description={vehicle.description} vehicle_class={vehicle.vehicle_class}
-                        length={vehicle.length}/>
+                {this.state.locations.map(location=>
+                  <Locations2 key={location.id} id={location.id} name={location.name}
+                        climate={location.climate} terrain={location.terrain}
+                        surface_water={location.surface_water} residents={location.residents}
+                        films={location.films}/>
                 )}
               </ol>
           </div>
@@ -114,4 +115,4 @@ class Vehicles extends Component {
   }
 }
 
-export default Vehicles;
+export default Locations;

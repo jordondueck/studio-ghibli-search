@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import Title from './Title';
-import Species2 from './Species2';
-import GhibliForm from './GhibliForm';
+import Vehicles2 from './Vehicles2';
+import GhibliForm from '../containers/GhibliForm';
 
-class Species extends Component {
+class Vehicles extends Component {
   constructor(props) {
     super(props);
     this.handleSubmitButton = this.handleSubmitButton.bind(this);
     this.state = {
-      species: [],
-      showSpecies: true
+      vehicles: [],
+      showVehicles: true
     };
   }
 
   componentDidMount() {
-    fetch('https://ghibliapi.herokuapp.com/species')
+    fetch('https://ghibliapi.herokuapp.com/vehicles')
     .then(response=> this.handleHTTPErrors(response))
     .then(response=> response.json())
     .then(result=> {
       this.setState({
-        species: result
+        vehicles: result
       });
     })
     .catch(error=> {
@@ -30,7 +30,7 @@ class Species extends Component {
   handleSubmitButton(event) {
     event.preventDefault();
     this.setState({
-      showSpecies: false
+      showVehicles: false
     });
   }
 
@@ -49,7 +49,7 @@ class Species extends Component {
       fontSize: 24,
       fontFamily: 'Montserrat'
     }
-    const speciesPageStyle = {
+    const vehiclesPageStyle = {
       width: '40%',
       maxWidth: '300px',
       backgroundColor: '#FFFFFF',
@@ -83,28 +83,28 @@ class Species extends Component {
       fontFamily: 'Montserrat',
       position: 'fixed'
     }
-    if(this.state.showSpecies) {
+    if(this.state.showVehicles) {
       return (
         <div>
           <div style={titleStyle}>
             <Title/>
           </div>
-          <div style={speciesPageStyle}> 
-            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Species</h2>
+          <div style={vehiclesPageStyle}> 
+            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Vehicles</h2>
             <br></br>
-            <div style={buttonContainer}>
-              <button style={buttonStyle} onClick={this.handleSubmitButton}>Back</button>
-            </div>
+              <div style={buttonContainer}>
+                <button style={buttonStyle} onClick={this.handleSubmitButton}>Back</button>
+              </div>
               <ol style={{listStyle: 'none', paddingLeft: 0}}>
-                {this.state.species.map(species=>
-                  <Species2 key={species.id} id={species.id} name={species.name}
-                        classification={species.classification} eye_colors={species.eye_colors}
-                        hair_colors={species.hair_colors}/>
+                {this.state.vehicles.map(vehicle=>
+                  <Vehicles2 key={vehicle.id} id={vehicle.id} name={vehicle.name}
+                        description={vehicle.description} vehicle_class={vehicle.vehicle_class}
+                        length={vehicle.length}/>
                 )}
               </ol>
           </div>
           <div style={footerStyle}>
-              Copyright &copy; 2018 Jordon Dueck
+            Copyright &copy; 2018 Jordon Dueck
           </div>
         </div>
       )
@@ -114,4 +114,4 @@ class Species extends Component {
   }
 }
 
-export default Species;
+export default Vehicles;

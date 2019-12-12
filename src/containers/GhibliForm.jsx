@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Films from "./Films";
-import People from "./People";
-import Locations from "./Locations";
-import Species from "./Species";
-import Vehicles from "./Vehicles";
+import Films from "../components/Films";
+import People from "../components/People";
+import Locations from "../components/Locations";
+import Species from "../components/Species";
+import Vehicles from "../components/Vehicles";
 // import headerPic from "./images/ghibli-header.png";
 // import footerPic from "./images/ghibli-char-group2.png";
-import "./styles/Container.css";
+import "./Container.css"
 
 class GhibliForm extends Component {
   constructor(props) {

@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import Title from './Title';
-import Locations2 from './Locations2';
-import GhibliForm from './GhibliForm';
+import Films2 from './Films2';
+import GhibliForm from '../containers/GhibliForm';
 
-class Locations extends Component {
+class Films extends Component {
   constructor(props) {
     super(props);
     this.handleSubmitButton = this.handleSubmitButton.bind(this);
     this.state = {
-      locations: [],
-      showLocations: true
+      films: [],
+      showFilms: true
     };
   }
 
   componentDidMount() {
-    fetch('https://ghibliapi.herokuapp.com/locations')
+    fetch('https://ghibliapi.herokuapp.com/films')
     .then(response=> this.handleHTTPErrors(response))
     .then(response=> response.json())
     .then(result=> {
       this.setState({
-        locations: result
+        films: result
       });
     })
     .catch(error=> {
@@ -30,7 +30,7 @@ class Locations extends Component {
   handleSubmitButton(event) {
     event.preventDefault();
     this.setState({
-      showLocations: false
+      showFilms: false
     });
   }
 
@@ -49,7 +49,7 @@ class Locations extends Component {
       fontSize: 24,
       fontFamily: 'Montserrat'
     }
-    const locationsPageStyle = {
+    const filmsPageStyle = {
       width: '40%',
       maxWidth: '300px',
       backgroundColor: '#FFFFFF',
@@ -83,24 +83,24 @@ class Locations extends Component {
       fontFamily: 'Montserrat',
       position: 'fixed'
     }
-    if(this.state.showLocations) {
+    if(this.state.showFilms) {
       return (
         <div>
           <div style={titleStyle}>
             <Title/>
           </div>
-          <div style={locationsPageStyle}> 
-            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Locations</h2>
+          <div style={filmsPageStyle}> 
+            <h2 style={{fontFamily: 'Montserrat', textAlign: 'center', fontSize: '28px'}}>Films</h2>
             <br></br>
             <div style={buttonContainer}>
               <button style={buttonStyle} onClick={this.handleSubmitButton}>Back</button>
             </div>
               <ol style={{listStyle: 'none', paddingLeft: 0}}>
-                {this.state.locations.map(location=>
-                  <Locations2 key={location.id} id={location.id} name={location.name}
-                        climate={location.climate} terrain={location.terrain}
-                        surface_water={location.surface_water} residents={location.residents}
-                        films={location.films}/>
+                {this.state.films.map(film=>
+                  <Films2 key={film.id} id={film.id} title={film.title}
+                        description={film.description} director={film.director}
+                        producer={film.producer} release_date={film.release_date}
+                        rt_score={film.rt_score}/>
                 )}
               </ol>
           </div>
@@ -115,4 +115,4 @@ class Locations extends Component {
   }
 }
 
-export default Locations;
+export default Films;
