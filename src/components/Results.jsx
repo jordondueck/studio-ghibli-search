@@ -1,17 +1,23 @@
 import React, { Component } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Results2 from "./Results2";
+// import Header from "./Header";
+// import Footer from "./Footer";
+// import Results2 from "./Results2";
 import App from "../containers/App";
+import Films from "./Films2";
+import Locations from "./Locations2";
+import People from "./People2";
+import Species from "./Species2";
+import Vehicles from "./Vehicles2";
 import "./Results.css";
 
 class Results extends Component {
   constructor(props) {
     super(props);
-    this.handleSubmitButton = this.handleSubmitButton.bind(this);
+    // this.handleBackButton = this.handleBackButton.bind(this);
     this.state = {
       results: [],
-      showResults: true
+      // showResults: true,
+      categoryClassArr: [Films, People, Locations, Species, Vehicles]
     };
   }
 
@@ -29,12 +35,13 @@ class Results extends Component {
       });
   }
 
-  handleSubmitButton(event) {
-    event.preventDefault();
-    this.setState({
-      showResults: false
-    });
-  }
+  // handleBackButton(event) {
+  //   event.preventDefault();
+  //   this.props.showForm = true;
+  //   this.setState({
+  //     showResults: false
+  //   });
+  // }
 
   handleHTTPErrors(response) {
     if (!response.ok) throw Error(response.status + ": " + response.statusText);
@@ -42,25 +49,42 @@ class Results extends Component {
   }
 
   render() {
-    if (this.state.showResults) {
+    if (this.props.showResults) {
+      // console.log('this.props.category' , this.props.category);
+      // console.log('this.state.categoryClassArr' , this.state.categoryClassArr);
+      // const RequestedCategory = this.state.categoryClassArr.indexOf(this.props.category);
+      // console.log('RequestedCategory' , RequestedCategory);
+      const RequestedCat = this.state.categoryClassArr[this.props.categoryIndex]
+      // switch(this.props.categoryIndex) {
+      //   case 0:
+      //     // code block
+      //     break;
+      //   case 1:
+      //     // code block
+      //     break;
+      //   case 2:
+      //     // code block
+      //     break;
+      //   case 3:
+      //     // code block
+      //     break;
+      //   default:
+      //     // code block
+      // }
       return (
-        <div className="container">
-          <Header />
           <div className="newFormStyle">
             <h2 className="titleStyle">{this.props.category}</h2>
             <div className="buttonContainer">
-              <button className="buttonStyle" onClick={this.handleSubmitButton}>
+              <button className="buttonStyle" onClick={this.props.handleBackButton}>
                 Back
               </button>
             </div>
             <ol>
               {this.state.results.map(result => (
-                <Results2 key={result.id} {...result} />
+                <RequestedCat key={result.id} {...result} />
               ))}
             </ol>
           </div>
-          <Footer />
-        </div>
       );
     } else {
       return <App />;

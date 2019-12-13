@@ -1,19 +1,23 @@
 import React, { Component } from "react";
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Results from "../components/Results";
-import "./App.css"
+import Form from "../components/Form";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.handleBoxChecked = this.handleBoxChecked.bind(this);
     this.handleSubmitButton = this.handleSubmitButton.bind(this);
+    this.handleBackButton = this.handleBackButton.bind(this);
     this.state = {
       checkboxGroup: [false, false, false, false, false, false],
-      categoryArr: ['Films', 'People', 'Locations', 'Species', 'Vehicles'],
+      categoryArr: ["Films", "People", "Locations", "Species", "Vehicles"],
       selectedCategory: App,
-      showForm: true
+      selectedCategoryIndex: -1,
+      showForm: true,
+      showResults: false
     };
   }
 
@@ -24,14 +28,27 @@ class App extends Component {
     let categoryIndex = event.target.value;
     this.setState({
       checkboxGroup: boxChecked,
-      selectedCategory: this.state.categoryArr[categoryIndex]
+      selectedCategory: this.state.categoryArr[categoryIndex],
+      selectedCategoryIndex: categoryIndex
     });
   }
 
   handleSubmitButton(event) {
     event.preventDefault();
     this.setState({
-      showForm: false
+      showForm: false,
+      showResults: true
+    });
+  }
+
+  handleBackButton(event) {
+    event.preventDefault();
+    let boxChecked = new Array(5);
+    boxChecked.fill(false);
+    this.setState({
+      showResults: false,
+      checkboxGroup: boxChecked,
+      showForm: true
     });
   }
 
@@ -46,86 +63,11 @@ class App extends Component {
         <div className="containerStyle">
           <Header />
           <section className="contentStyle">
-            <form className="formStyle">
-              <fieldset>
-                <h4 className="formTitleStyle">Select a Category</h4>
-                <ul>
-                  <li>
-                    <label>
-                      <input
-                        type="radio"
-                        name="radioGroup"
-                        value="0"
-                        checked={this.state.checkboxGroup[0]}
-                        onChange={this.handleBoxChecked}
-                      />
-                      Films
-                    </label>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <label>
-                      <input
-                        type="radio"
-                        name="radioGroup"
-                        value="1"
-                        checked={this.state.checkboxGroup[1]}
-                        onChange={this.handleBoxChecked}
-                      />
-                      People
-                    </label>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <label>
-                      <input
-                        type="radio"
-                        name="radioGroup"
-                        value="2"
-                        checked={this.state.checkboxGroup[2]}
-                        onChange={this.handleBoxChecked}
-                      />
-                      Locations
-                    </label>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <label>
-                      <input
-                        type="radio"
-                        name="radioGroup"
-                        value="3"
-                        checked={this.state.checkboxGroup[3]}
-                        onChange={this.handleBoxChecked}
-                      />
-                      Species
-                    </label>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <label>
-                      <input
-                        type="radio"
-                        name="radioGroup"
-                        value="4"
-                        checked={this.state.checkboxGroup[4]}
-                        onChange={this.handleBoxChecked}
-                      />
-                      Vehicles
-                    </label>
-                  </li>
-                </ul>
-                <div className="buttonContainer">
-                  <button className="buttonStyle" onClick={this.handleSubmitButton}>
-                    Submit
-                  </button>
-                </div>
-              </fieldset>
-            </form>
+            <Form
+              handleBoxChecked={this.handleBoxChecked}
+              handleSubmitButton={this.handleSubmitButton}
+              checkboxGroup={this.state.checkboxGroup}
+            />
           </section>
           <Footer />
         </div>
@@ -133,9 +75,19 @@ class App extends Component {
     } else {
       return (
         <div className="container">
-          <Results category={this.state.selectedCategory}/>
+          <Header />
+          <section className="contentStyle">
+            <Results
+              category={this.state.selectedCategory}
+              categoryIndex={this.state.selectedCategoryIndex}
+              showForm={this.state.showForm}
+              showResults={this.state.showResults}
+              handleBackButton={this.handleBackButton}
+            />
+          </section>
+          <Footer />
         </div>
-      )
+      );
     }
   }
 }
