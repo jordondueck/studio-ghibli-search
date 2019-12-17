@@ -1,4 +1,4 @@
-.containerStyle {
+.container {
   height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -7,7 +7,7 @@
   /* background: linear-gradient(115deg, #373b44, #4286f4); */
 }
 
-/* .containerStyle2 {
+/* .container2 {
   display: grid;
   grid-template-rows: auto 2fr 1fr 1fr auto;
 } */
@@ -35,7 +35,7 @@ p {
 }
 
 /* Content */
-.contentStyle {
+.content {
   align-self: center;
 }
 

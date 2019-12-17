@@ -1,72 +1,73 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Results from "../components/Results";
 import Form from "../components/Form";
+import Results from "../components/Results";
 import "./App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.handleBoxChecked = this.handleBoxChecked.bind(this);
-    this.handleSubmitButton = this.handleSubmitButton.bind(this);
-    this.handleBackButton = this.handleBackButton.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBack = this.handleBack.bind(this);
     this.state = {
-      checkboxGroup: [false, false, false, false, false, false],
-      categoryArr: ["Films", "People", "Locations", "Species", "Vehicles"],
+      formInput: {
+        value: [0, 1, 2, 3, 4],
+        checked: [false, false, false, false, false]
+      },
+      category: ["Films", "People", "Locations", "Species", "Vehicles"],
       selectedCategory: App,
       selectedCategoryIndex: -1,
-      showForm: true,
-      showResults: false
+      showForm: true
     };
   }
 
-  handleBoxChecked(event) {
-    let boxChecked = new Array(5);
-    boxChecked.fill(false);
+  handleSelect(event) {
+    let boxChecked = new Array(5).fill(false);
     boxChecked[event.target.value] = event.target.checked;
     let categoryIndex = event.target.value;
     this.setState({
-      checkboxGroup: boxChecked,
-      selectedCategory: this.state.categoryArr[categoryIndex],
+      selectedCategory: this.state.category[categoryIndex],
       selectedCategoryIndex: categoryIndex
+    })
+    // Update state for formInput (Object)
+    this.setState(prevState => {
+      let formInput = { ...prevState.formInput }
+      formInput.checked = boxChecked;
+      return { formInput }
     });
   }
 
-  handleSubmitButton(event) {
+  handleSubmit(event) {
     event.preventDefault();
     this.setState({
-      showForm: false,
-      showResults: true
+      showForm: false
     });
   }
 
-  handleBackButton(event) {
+  handleBack(event) {
     event.preventDefault();
-    let boxChecked = new Array(5);
-    boxChecked.fill(false);
     this.setState({
-      showResults: false,
-      checkboxGroup: boxChecked,
       showForm: true
     });
-  }
-
-  handleHTTPErrors(response) {
-    if (!response.ok) throw Error(response.status + ": " + response.statusText);
-    return response;
+    this.setState(prevState => {
+      let formInput = { ...prevState.formInput }
+      formInput.checked.fill(false);
+      return { formInput }
+    });
   }
 
   render() {
     if (this.state.showForm) {
       return (
-        <div className="containerStyle">
+        <div className="container">
           <Header />
-          <section className="contentStyle">
+          <section className="content">
             <Form
-              handleBoxChecked={this.handleBoxChecked}
-              handleSubmitButton={this.handleSubmitButton}
-              checkboxGroup={this.state.checkboxGroup}
+              handleSelect={this.handleSelect}
+              handleSubmit={this.handleSubmit}
+              formInput={this.state.formInput}
             />
           </section>
           <Footer />
@@ -76,13 +77,12 @@ class App extends Component {
       return (
         <div className="container">
           <Header />
-          <section className="contentStyle">
+          <section className="content">
             <Results
-              category={this.state.selectedCategory}
-              categoryIndex={this.state.selectedCategoryIndex}
+              handleBack={this.handleBack}
+              selectedCategory={this.state.selectedCategory}
+              selectedCategoryIndex={this.state.selectedCategoryIndex}
               showForm={this.state.showForm}
-              showResults={this.state.showResults}
-              handleBackButton={this.handleBackButton}
             />
           </section>
           <Footer />
