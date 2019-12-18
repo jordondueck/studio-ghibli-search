@@ -10,9 +10,9 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.handleSelect = this.handleSelect.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleBack = this.handleBack.bind(this);
+    // this.handleSelect = this.handleSelect.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleBack = this.handleBack.bind(this);
     this.handleNav = this.handleNav.bind(this);
     this.state = {
       formInput: {
@@ -22,44 +22,44 @@ class App extends Component {
       category: ["Films", "People", "Locations", "Species", "Vehicles"],
       selectedCategory: App,
       selectedCategoryIndex: -1,
-      showForm: true
+      // showForm: true
     };
   }
 
-  handleSelect(event) {
-    let boxChecked = new Array(5).fill(false);
-    boxChecked[event.target.value] = event.target.checked;
-    let categoryIndex = event.target.value;
-    this.setState({
-      selectedCategory: this.state.category[categoryIndex],
-      selectedCategoryIndex: categoryIndex
-    })
-    // Update state for formInput (Object)
-    this.setState(prevState => {
-      let formInput = { ...prevState.formInput }
-      formInput.checked = boxChecked;
-      return { formInput }
-    });
-  }
+  // handleSelect(event) {
+  //   let boxChecked = new Array(5).fill(false);
+  //   boxChecked[event.target.value] = event.target.checked;
+  //   let categoryIndex = event.target.value;
+  //   this.setState({
+  //     selectedCategory: this.state.category[categoryIndex],
+  //     selectedCategoryIndex: categoryIndex
+  //   })
+  //   // Update state for formInput (Object)
+  //   this.setState(prevState => {
+  //     let formInput = { ...prevState.formInput }
+  //     formInput.checked = boxChecked;
+  //     return { formInput }
+  //   });
+  // }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    this.setState({
-      showForm: false
-    });
-  }
+  // handleSubmit(event) {
+  //   event.preventDefault();
+  //   this.setState({
+  //     showForm: false
+  //   });
+  // }
 
-  handleBack(event) {
-    event.preventDefault();
-    this.setState({
-      showForm: true
-    });
-    this.setState(prevState => {
-      let formInput = { ...prevState.formInput }
-      formInput.checked.fill(false);
-      return { formInput }
-    });
-  }
+  // handleBack(event) {
+  //   event.preventDefault();
+  //   this.setState({
+  //     showForm: true
+  //   });
+  //   this.setState(prevState => {
+  //     let formInput = { ...prevState.formInput }
+  //     formInput.checked.fill(false);
+  //     return { formInput }
+  //   });
+  // }
 
   handleNav(event) {
     event.preventDefault();
@@ -67,12 +67,12 @@ class App extends Component {
     this.setState({
       selectedCategory: this.state.category[event.target.id],
       selectedCategoryIndex: event.target.id,
-      showForm: false
+      // showForm: false
     });
   }
 
   render() {
-    if (this.state.showForm) {
+    if (this.state.selectedCategoryIndex === -1) {
       return (
         <div className="container">
           <NavBar category={this.state.category} handleNav={this.handleNav} />
@@ -94,10 +94,10 @@ class App extends Component {
           <NavBar category={this.state.category} handleNav={this.handleNav} />
           <section className="content">
             <Results
-              handleBack={this.handleBack}
+              // handleBack={this.handleBack}
               selectedCategory={this.state.selectedCategory}
               selectedCategoryIndex={this.state.selectedCategoryIndex}
-              showForm={this.state.showForm}
+              // showForm={this.state.showForm}
             />
           </section>
           <Footer />

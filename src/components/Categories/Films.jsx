@@ -14,8 +14,8 @@ const Films = (props) => {
   }
 
   return (
-    <div style={siteStyle}>
-      <li>
+    <div className="card">
+      {/* <li> */}
         <b>Title:</b> {props.title}
         <br />
         <b>Description:</b> {props.description}
@@ -28,7 +28,7 @@ const Films = (props) => {
         <br />
         <b>Rotten Tomatoes Score:</b> {props.rt_score} out of 100
         <br />
-      </li> 
+      {/* </li>  */}
     </div>
   )
 }
