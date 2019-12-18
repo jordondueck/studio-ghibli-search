@@ -3,35 +3,14 @@ import "./Card.css"
 
 const FilmsCard = props => {
   return (
-    // <div className="card">
-    //   <h2>{props.name}</h2>
-    //   <p><b>Description:</b> {props.description}</p>
-    //   <p><b>Class:</b> {props.vehicle_class}</p>
-    //   <p><b>Length:</b> {props.length} m</p>
-
-      <div className="card">
-        <b>Title:</b> {props.title}
-        <b>Description:</b> {props.description}
-        <b>Director:</b> {props.director}
-        <b>Producer:</b> {props.producer}
-        <b>Release Date:</b> {props.release_date}
-        <b>Rotten Tomatoes Score:</b> {props.rt_score} out of 100
-        <br />
-      </div> 
-
-
-    // <div style={siteStyle}>
-    //   <li>
-    //     <b>Name:</b> {props.name}
-    //     <br />
-    //     <b>Description:</b> {props.description}
-    //     <br />
-    //     <b>Class:</b> {props.vehicle_class}
-    //     <br />
-    //     <b>Length:</b> {props.length} m
-    //     <br />
-    //   </li>
-    // </div>
+    <ul className="card">
+      <li><h2>{props.title}</h2></li>
+      <li><b>Description:</b> {props.description}</li>
+      <li><b>Director:</b> {props.director}</li>
+      <li><b>Producer:</b> {props.producer}</li>
+      <li><b>Release Date:</b> {props.release_date}</li>
+      <li><b>Rotten Tomatoes Score:</b> {props.rt_score} out of 100</li>
+    </ul> 
   );
 };
 

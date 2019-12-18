@@ -17,3 +17,7 @@
   transform: scale(1.05);
   transition: 1s;
 }
+
+h2, li {
+  margin: 0;
+}
