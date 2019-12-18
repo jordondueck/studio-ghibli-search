@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
+import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Form from "../components/Form";
+import CardList from "../components/CardList";
 import Results from "../components/Results";
 import "./App.css";
 
@@ -11,6 +13,7 @@ class App extends Component {
     this.handleSelect = this.handleSelect.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBack = this.handleBack.bind(this);
+    this.handleNav = this.handleNav.bind(this);
     this.state = {
       formInput: {
         value: [0, 1, 2, 3, 4],
@@ -58,17 +61,29 @@ class App extends Component {
     });
   }
 
+  handleNav(event) {
+    event.preventDefault();
+    console.log('event.target.id' , event.target.id)
+    this.setState({
+      selectedCategory: this.state.category[event.target.id],
+      selectedCategoryIndex: event.target.id,
+      showForm: false
+    });
+  }
+
   render() {
     if (this.state.showForm) {
       return (
         <div className="container">
-          <Header />
+          <NavBar category={this.state.category} handleNav={this.handleNav} />
           <section className="content">
-            <Form
+            {/* <Form
               handleSelect={this.handleSelect}
               handleSubmit={this.handleSubmit}
               formInput={this.state.formInput}
-            />
+            /> */}
+            {/* <CardList category={this.state.category} /> */}
+            Select a category
           </section>
           <Footer />
         </div>
@@ -76,7 +91,7 @@ class App extends Component {
     } else {
       return (
         <div className="container">
-          <Header />
+          <NavBar category={this.state.category} handleNav={this.handleNav} />
           <section className="content">
             <Results
               handleBack={this.handleBack}

@@ -4,8 +4,8 @@ html, body, #root {
 
 html {
   /* Fallback background */
-  background: #364b6d;  
-  background: linear-gradient(115deg, #373b44, #4286f4);
+  /* background: #364b6d;  
+  background: linear-gradient(115deg, #373b44, #4286f4); */
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
