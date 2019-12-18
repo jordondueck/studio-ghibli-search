@@ -1,15 +1,15 @@
 .card {
-  text-align: center;
+  text-align: left;
   background: lightblue;
   border-radius: 0.25rem;
   border-width: 0.25rem;
-  box-shadow: 0.25rem 0.25rem 0.25rem black;
-  padding: 1rem;
-  margin: 1rem;
-  width: 300px;
+  box-shadow: 0.25rem 0.25rem 0.25rem darkslategrey;
+  padding: 0.5rem;
+  /* margin: 1rem; */
+  width: 80%;
   height: auto;
   flex-grow: 1;
-  font-size: 12px;
+  font-size: 0.8rem;
   overflow: hidden;
 }
 
@@ -18,6 +18,14 @@
   transition: 1s;
 }
 
+h2 {
+  text-align: center;
+}
+
 h2, li {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
 }
