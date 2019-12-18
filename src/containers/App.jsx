@@ -14,6 +14,7 @@ class App extends Component {
     // this.handleSubmit = this.handleSubmit.bind(this);
     // this.handleBack = this.handleBack.bind(this);
     this.handleNav = this.handleNav.bind(this);
+    this.handleHome = this.handleHome.bind(this);
     this.state = {
       formInput: {
         value: [0, 1, 2, 3, 4],
@@ -71,11 +72,18 @@ class App extends Component {
     });
   }
 
+  handleHome(event) {
+    event.preventDefault();
+    this.setState({
+      selectedCategoryIndex: -1
+    });
+  }
+
   render() {
     if (this.state.selectedCategoryIndex === -1) {
       return (
         <div className="container">
-          <NavBar category={this.state.category} handleNav={this.handleNav} />
+          <NavBar category={this.state.category} handleNav={this.handleNav}  />
           <section className="content">
             {/* <Form
               handleSelect={this.handleSelect}
@@ -91,7 +99,7 @@ class App extends Component {
     } else {
       return (
         <div className="container">
-          <NavBar category={this.state.category} handleNav={this.handleNav} />
+          <NavBar category={this.state.category} handleNav={this.handleNav} handleHome={this.handleHome} />
           <section className="content">
             <Results
               // handleBack={this.handleBack}

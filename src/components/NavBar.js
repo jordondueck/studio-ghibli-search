@@ -1,11 +1,11 @@
 import React from "react";
 import "./NavBar.css";
 
-const NavBar = ({ category, handleNav }) => {
+const NavBar = ({ category, handleNav, handleHome }) => {
   return (
     <nav>
       <div className="nav-title">
-        <h3>Studio Ghibli Search</h3>
+        <h3 onClick={handleHome}>Studio Ghibli Search</h3>
       </div>
       <ul className="nav-links">
         {category.map((name, i) => {
