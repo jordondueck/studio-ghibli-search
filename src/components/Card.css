@@ -4,10 +4,10 @@
   border-radius: 0.25rem;
   border-width: 0.25rem;
   box-shadow: 0.25rem 0.25rem 0.25rem black;
-  padding: 1rem;
-  margin: 1rem;
-  width: 60px;
-  height: 50px;
+  /* padding: 1rem; */
+  /* margin: 1rem; */
+  width: 100%;
+  height: auto;
   flex-grow: 1;
   font-size: 12px;
 }

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar.jsx";
+import NavBar2 from "../components/NavBar2.jsx";
 import Footer from "../components/Footer";
-import Form from "../components/Form";
 import CardList from "../components/CardList";
 import Results from "../components/Results";
 import "./App.css";
@@ -23,7 +22,6 @@ class App extends Component {
       category: ["Films", "People", "Locations", "Species", "Vehicles"],
       selectedCategory: App,
       selectedCategoryIndex: -1,
-      // showForm: true
     };
   }
 
@@ -67,8 +65,7 @@ class App extends Component {
     console.log('event.target.id' , event.target.id)
     this.setState({
       selectedCategory: this.state.category[event.target.id],
-      selectedCategoryIndex: event.target.id,
-      // showForm: false
+      selectedCategoryIndex: event.target.id
     });
   }
 
@@ -83,15 +80,10 @@ class App extends Component {
     if (this.state.selectedCategoryIndex === -1) {
       return (
         <div className="container">
-          <NavBar category={this.state.category} handleNav={this.handleNav}  />
+          <NavBar2 category={this.state.category} handleNav={this.handleNav}  />
           <section className="content">
-            {/* <Form
-              handleSelect={this.handleSelect}
-              handleSubmit={this.handleSubmit}
-              formInput={this.state.formInput}
-            /> */}
-            {/* <CardList category={this.state.category} /> */}
-            Select a category
+            <CardList category={this.state.category} handleNav={this.handleNav} />
+            {/* Select a category */}
           </section>
           <Footer />
         </div>
@@ -105,7 +97,6 @@ class App extends Component {
               // handleBack={this.handleBack}
               selectedCategory={this.state.selectedCategory}
               selectedCategoryIndex={this.state.selectedCategoryIndex}
-              // showForm={this.state.showForm}
             />
           </section>
           <Footer />
