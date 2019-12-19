@@ -1,7 +1,7 @@
 import React from "react";
-import "./Card.css"
+import "./Category.css"
 
-const PeopleCard = props => {
+const People = props => {
   return (
     <ul className="card">
       <li><h2>{props.name}</h2></li>
@@ -13,4 +13,4 @@ const PeopleCard = props => {
   );
 };
 
-export default PeopleCard;
+export default People;

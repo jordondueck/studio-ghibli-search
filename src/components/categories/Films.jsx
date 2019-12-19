@@ -1,7 +1,7 @@
 import React from "react";
-import "./Card.css"
+import "./Category.css"
 
-const FilmsCard = props => {
+const Films = props => {
   // console.log('props' , props);
   let results = Object.values(props);
   let description = results[2];
@@ -24,4 +24,4 @@ const FilmsCard = props => {
   );
 };
 
-export default FilmsCard;
+export default Films;

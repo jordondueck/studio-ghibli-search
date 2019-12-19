@@ -1,7 +1,7 @@
 import React from "react";
-import "./Card.css"
+import "./Category.css"
 
-const LocationsCard = props => {
+const Locations = props => {
   return (
     <ul className="card">
       <li><h2>{props.name}</h2></li>
@@ -12,4 +12,4 @@ const LocationsCard = props => {
   );
 };
 
-export default LocationsCard;
+export default Locations;

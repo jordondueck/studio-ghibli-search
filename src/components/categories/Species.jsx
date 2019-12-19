@@ -1,7 +1,7 @@
 import React from "react";
-import "./Card.css"
+import "./Category.css"
 
-const SpeciesCard = props => {
+const Species = props => {
   return (
     <ul className="card">
       <li><h2>{props.name}</h2></li>
@@ -12,4 +12,4 @@ const SpeciesCard = props => {
   );
 };
 
-export default SpeciesCard;
+export default Species;

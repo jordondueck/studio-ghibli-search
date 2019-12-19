@@ -2,6 +2,6 @@
   display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 1rem;
-    padding-bottom: 2em;
+    padding: 1em 0;
     justify-items: center;
 }

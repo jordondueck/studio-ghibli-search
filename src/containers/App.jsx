@@ -9,16 +9,13 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    // this.handleSelect = this.handleSelect.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleBack = this.handleBack.bind(this);
     this.handleNav = this.handleNav.bind(this);
     this.handleHome = this.handleHome.bind(this);
     this.state = {
-      formInput: {
-        value: [0, 1, 2, 3, 4],
-        checked: [false, false, false, false, false]
-      },
+      // formInput: {
+      //   value: [0, 1, 2, 3, 4],
+      //   checked: [false, false, false, false, false]
+      // },
       category: ["Films", "People", "Locations", "Species", "Vehicles"],
       selectedCategory: App,
       selectedCategoryIndex: -1,
@@ -37,25 +34,6 @@ class App extends Component {
   //   this.setState(prevState => {
   //     let formInput = { ...prevState.formInput }
   //     formInput.checked = boxChecked;
-  //     return { formInput }
-  //   });
-  // }
-
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  //   this.setState({
-  //     showForm: false
-  //   });
-  // }
-
-  // handleBack(event) {
-  //   event.preventDefault();
-  //   this.setState({
-  //     showForm: true
-  //   });
-  //   this.setState(prevState => {
-  //     let formInput = { ...prevState.formInput }
-  //     formInput.checked.fill(false);
   //     return { formInput }
   //   });
   // }
@@ -82,8 +60,8 @@ class App extends Component {
         <div className="container">
           <NavBar2 category={this.state.category} handleNav={this.handleNav}  />
           <section className="content">
+            <h2>Select a category</h2>
             <CardList category={this.state.category} handleNav={this.handleNav} />
-            {/* Select a category */}
           </section>
           <Footer />
         </div>
