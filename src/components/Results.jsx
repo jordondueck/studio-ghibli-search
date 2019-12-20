@@ -4,7 +4,8 @@ import Locations from "./categories/Locations";
 import People from "./categories/People";
 import Species from "./categories/Species";
 import Vehicles from "./categories/Vehicles";
-import Card2 from "./Card2"
+import CardList2 from "./CardList2"
+// import Card2 from "./Card2"
 import "./Results.css";
 import "./CardList.css"
 
@@ -54,11 +55,13 @@ class Results extends Component {
       const RequestedCategory = this.state.categoryComponent[this.props.selectedCategoryIndex];
 
       return (
-          <div className="cardList">
-              {this.state.results.map(result => (
-                <Card2 category={this.props.selectedCategory} key={result.id} {...result}  />
-              ))}
-          </div>
+        <CardList2 category={this.props.selectedCategory} results={this.state.results}  />
+
+          // <div className="cardList">
+          //     {this.state.results.map(result => (
+          //       <Card2 category={this.props.selectedCategory} key={result.id} {...result}  />
+          //     ))}
+          // </div>
       );
   }
 }
