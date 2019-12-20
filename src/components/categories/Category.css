@@ -1,8 +1,10 @@
 .card {
   text-align: left;
-  background: lightblue;
+  background: rgb(246, 249, 252);
+  border: 1px solid;
+  border-color: lightblue;
   border-radius: 0.25rem;
-  border-width: 0.25rem;
+  /* border-width: 1rem; */
   box-shadow: 0.25rem 0.25rem 0.25rem darkslategrey;
   padding: 0.5rem;
   /* margin: 1rem; */
@@ -38,4 +40,9 @@ li {
 h7 {
   font-weight: bold;
   /* font-size: 0.9rem; */
+}
+
+.rotten-tomato {
+  width: 24px;
+  height: 24px;
 }
