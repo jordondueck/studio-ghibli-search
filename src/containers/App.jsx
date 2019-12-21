@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "../components/NavBar.jsx";
-import NavBar2 from "../components/NavBar2.jsx";
 import Footer from "../components/Footer";
-import CardList from "../components/CardList";
+import Dashboard from "../components/dashboard/Dashboard";
 import Results from "../components/Results";
 import "./App.css";
 
@@ -12,15 +11,14 @@ class App extends Component {
     this.handleNav = this.handleNav.bind(this);
     this.handleHome = this.handleHome.bind(this);
     this.state = {
-      category: ["Films", "People", "Locations", "Species", "Vehicles"],
+      category: ["Films", "Locations", "People", "Species", "Vehicles"],
       selectedCategory: App,
-      selectedCategoryIndex: -1,
+      selectedCategoryIndex: -1
     };
   }
 
   handleNav(event) {
     event.preventDefault();
-    console.log('event.target.id' , event.target.id)
     this.setState({
       selectedCategory: this.state.category[event.target.id],
       selectedCategoryIndex: event.target.id
@@ -38,10 +36,18 @@ class App extends Component {
     if (this.state.selectedCategoryIndex === -1) {
       return (
         <div className="container">
-          <NavBar2 category={this.state.category} handleNav={this.handleNav}  />
+          <NavBar
+            category={this.state.category}
+            selectedCategoryIndex={this.state.selectedCategoryIndex}
+            handleNav={this.handleNav}
+            handleHome={this.handleHome}
+          />
           <section className="content">
             <h3>Select a category</h3>
-            <CardList category={this.state.category} handleNav={this.handleNav} />
+            <Dashboard
+              category={this.state.category}
+              handleNav={this.handleNav}
+            />
           </section>
           <Footer />
         </div>
@@ -49,7 +55,12 @@ class App extends Component {
     } else {
       return (
         <div className="container">
-          <NavBar category={this.state.category} handleNav={this.handleNav} handleHome={this.handleHome} />
+          <NavBar
+            category={this.state.category}
+            selectedCategoryIndex={this.state.selectedCategoryIndex}
+            handleNav={this.handleNav}
+            handleHome={this.handleHome}
+          />
           <section className="content">
             <Results
               selectedCategory={this.state.selectedCategory}

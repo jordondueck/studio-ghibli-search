@@ -1,0 +1,23 @@
+.dashboard-item {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  text-align: left;
+  background: rgb(246, 249, 252);
+  border: 1px solid;
+  border-color: lightblue;
+  border-radius: 0.25rem;
+  box-shadow: 0.25rem 0.25rem 0.25rem darkslategrey;
+  padding: 0.5rem;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.dashboard-item:hover {
+  transform: scale(1.05);
+  transition: 0.8s;
+  cursor: pointer;
+}
