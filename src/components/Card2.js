@@ -85,7 +85,7 @@ const Card2 = props => {
     </ul>
       )
     } else {
-      return <CardExpanded id={props.id} category={(props.category).toLowerCase()} categoryFields={categoryFields} expandCard={expandCard} />
+      return <CardExpanded id={props.id} category={(props.category).toLowerCase()} results={props} categoryFields={categoryFields} expandCard={expandCard} />
     }
 };
 
