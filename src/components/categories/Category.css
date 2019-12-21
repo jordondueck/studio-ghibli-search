@@ -1,19 +1,26 @@
 .card {
+  display: flex;
+  flex-direction: column;
+  /* grid-template-columns: 1fr; */
+  justify-content: space-between;
   text-align: left;
   background: rgb(246, 249, 252);
   border: 1px solid;
   border-color: lightblue;
   border-radius: 0.25rem;
-  /* border-width: 1rem; */
   box-shadow: 0.25rem 0.25rem 0.25rem darkslategrey;
   padding: 0.5rem;
-  /* margin: 1rem; */
   width: 80%;
   max-width: 400px;
   height: auto;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   font-size: 0.8rem;
   overflow: hidden;
+}
+
+.flexDiv {
+  display: flex;
+  flex-direction: column;
 }
 
 .card-expanded {
@@ -57,11 +64,11 @@
   transition: 1s;
 }
 
-h2 {
+h3 {
   text-align: center;
 }
 
-h2, li {
+h3, li {
   margin: 0;
 }
 
@@ -81,4 +88,47 @@ h7 {
 .rotten-tomato {
   width: 24px;
   height: 24px;
+}
+
+.readMore {
+  display: inline-block;
+  border: 1px solid;
+  border-color: lightblue;
+  border-radius: 0.25rem;
+    padding: 0.25rem;
+    margin: 0;
+    text-decoration: none;
+    background: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.clickToExpand {
+  /* display: inline-block; */
+  border: 1px solid;
+  border-color: lightblue;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  text-decoration: none;
+  background: #0069ed;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  /* transition: background 250ms ease-in-out,  */
+              /* transform 150ms ease; */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding-bottom: 0;
 }

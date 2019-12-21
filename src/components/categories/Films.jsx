@@ -9,7 +9,7 @@ const Films = props => {
 
   if (description.length >= 250) {
     description = description.slice(0, 250);
-    readMore = <a href='#'>(...read more)</a>
+    // readMore = <a href='#'>(...read more)</a>
   }
   
   return (

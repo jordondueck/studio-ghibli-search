@@ -35,26 +35,23 @@ const Card2 = props => {
     ]
   }
 
-  // let cardExpanded = false;
   const [cardExpanded, setCardExpanded] = useState(false);
 
   const expandCard = event => {
-    console.log('props.id' , props.id);
-    console.log('cardExpanded-Before' , cardExpanded);
-    console.log('cardExpanded-Before-SetTo' , !cardExpanded);
     setCardExpanded(!cardExpanded)
-    console.log('cardExpanded-After' , cardExpanded);
   }
 
   const selectedCategory = categoryFields[(props.category).toLowerCase()];
-  const cardTitle = <li key='-1' id='-1'><h2>{props.name ? props.name : props.title}</h2></li>;
-  const readMore = <a href='#'>(read more)</a>
+  const cardTitle = <li key='-1' id='-1'><h3>{props.name ? props.name : props.title}</h3></li>;
+  // const readMore = <button className="readMore">(read more)</button>
+  const readMore2 = '...';
+  const clickToExpand = <button className="clickToExpand">Click to expand</button>
 
   if(!cardExpanded) {
   return (
     <ul className="card" onClick={expandCard}>
       {console.log('props (Card2)' , props)}
-      {/* {console.log('selectedCategory' , selectedCategory)} */}
+      <div className="flexDiv">
       {cardTitle}
       {selectedCategory.map((value, index) => {
         // return (props[value.name].length < 250) ? (<li id={index}>{value.label}: {props[value.name]}</li>) : (<li id={index}>{value.label}: {props[value.name].slice(0, 250)} {readMore}</li>)
@@ -62,7 +59,7 @@ const Card2 = props => {
           if (props[value.name].length < 250) {
             return <li key={index} id={index}>{props[value.name]}</li>
           } else {
-            return <li key={index} id={index}>{props[value.name].slice(0, 250)} {readMore}</li>
+            return <li key={index} id={index}>{props[value.name].slice(0, 250)}{readMore2}</li>
           }
         } else if (value.unit) { // If the value has a unit (set as state variable)
           if (value.name === 'age' && isNaN(props[value.name])) { // Special Case - do not use the unit (years) when age is empty or N/A
@@ -83,6 +80,8 @@ const Card2 = props => {
           return <li key={index} id={index}><h7>{value.label}:</h7> {props[value.name]}</li>
         }
       })}
+      </div>
+      <li className="buttonContainer">{clickToExpand}</li>
     </ul>
       )
     } else {

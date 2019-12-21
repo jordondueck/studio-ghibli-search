@@ -12,31 +12,11 @@ class App extends Component {
     this.handleNav = this.handleNav.bind(this);
     this.handleHome = this.handleHome.bind(this);
     this.state = {
-      // formInput: {
-      //   value: [0, 1, 2, 3, 4],
-      //   checked: [false, false, false, false, false]
-      // },
       category: ["Films", "People", "Locations", "Species", "Vehicles"],
       selectedCategory: App,
       selectedCategoryIndex: -1,
     };
   }
-
-  // handleSelect(event) {
-  //   let boxChecked = new Array(5).fill(false);
-  //   boxChecked[event.target.value] = event.target.checked;
-  //   let categoryIndex = event.target.value;
-  //   this.setState({
-  //     selectedCategory: this.state.category[categoryIndex],
-  //     selectedCategoryIndex: categoryIndex
-  //   })
-  //   // Update state for formInput (Object)
-  //   this.setState(prevState => {
-  //     let formInput = { ...prevState.formInput }
-  //     formInput.checked = boxChecked;
-  //     return { formInput }
-  //   });
-  // }
 
   handleNav(event) {
     event.preventDefault();
@@ -60,7 +40,7 @@ class App extends Component {
         <div className="container">
           <NavBar2 category={this.state.category} handleNav={this.handleNav}  />
           <section className="content">
-            <h2>Select a category</h2>
+            <h3>Select a category</h3>
             <CardList category={this.state.category} handleNav={this.handleNav} />
           </section>
           <Footer />
@@ -72,7 +52,6 @@ class App extends Component {
           <NavBar category={this.state.category} handleNav={this.handleNav} handleHome={this.handleHome} />
           <section className="content">
             <Results
-              // handleBack={this.handleBack}
               selectedCategory={this.state.selectedCategory}
               selectedCategoryIndex={this.state.selectedCategoryIndex}
             />

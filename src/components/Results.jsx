@@ -52,7 +52,7 @@ class Results extends Component {
   }
 
   render() {
-      const RequestedCategory = this.state.categoryComponent[this.props.selectedCategoryIndex];
+      // const RequestedCategory = this.state.categoryComponent[this.props.selectedCategoryIndex];
 
       return (
         <CardList2 category={this.props.selectedCategory} results={this.state.results}  />
