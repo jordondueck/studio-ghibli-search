@@ -43,7 +43,6 @@ class App extends Component {
             handleHome={this.handleHome}
           />
           <section className="content">
-            <h3>Select a category</h3>
             <Dashboard
               category={this.state.category}
               handleNav={this.handleNav}

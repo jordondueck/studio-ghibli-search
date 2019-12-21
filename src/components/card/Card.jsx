@@ -98,20 +98,20 @@ const Card = props => {
                 );
               } else if (value.name === "surface_water") {
                 // Special Case - only use km^2 when surface water is greater than 0
-                if (props[value.name] > 0) {
+                // if (props[value.name] > 0) {
                   return (
                     <li key={index} id={index}>
                       <h5>{value.label}:</h5> {props[value.name]} {value.unit}
                       <sup>2</sup>
                     </li>
                   );
-                } else if (props[value.name] === 0) {
-                  return (
-                    <li key={index} id={index}>
-                      <h5>{value.label}:</h5> None
-                    </li>
-                  );
-                }
+                // } else if (props[value.name] === 0) {
+                //   return (
+                //     <li key={index} id={index}>
+                //       <h5>{value.label}:</h5> None
+                //     </li>
+                //   );
+                // }
               } else {
                 // Default Case - append the unit to the value (if unit is set)
                 return (
@@ -128,11 +128,11 @@ const Card = props => {
                 </li>
               );
             }
-            return (
-              <li key={index} id={index}>
-                <h5>{value.label}:</h5> {props[value.name]}
-              </li>
-            );
+            // return (
+            //   <li key={index} id={index}>
+            //     <h5>{value.label}:</h5> {props[value.name]}
+            //   </li>
+            // );
           })}
         </div>
         <li className="buttonContainer">{clickToExpand}</li>
