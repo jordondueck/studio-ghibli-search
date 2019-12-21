@@ -55,11 +55,9 @@ const Card = props => {
   if (!cardExpanded) {
     return (
       <ul className="card" onClick={expandCard}>
-        {console.log("props (Card2)", props)}
         <div className="flexDiv">
           {cardTitle}
           {selectedCategory.map((value, index) => {
-            // return (props[value.name].length < 250) ? (<li id={index}>{value.label}: {props[value.name]}</li>) : (<li id={index}>{value.label}: {props[value.name].slice(0, 250)} {readMore}</li>)
             if (value.name === "description") {
               if (props[value.name].length < 250) {
                 return (

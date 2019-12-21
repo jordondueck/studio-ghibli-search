@@ -5,20 +5,9 @@ import "./CardList.css";
 
 class CardExpanded extends React.Component {
   render() {
-    console.log("this.props(Card Expanded)", this.props);
-    // console.log('this.state.results' , this.state.results);
-    console.log("this.props.results", this.props.results);
-    console.log(
-      "URL used: ",
-      "https://ghibliapi.herokuapp.com/" +
-        this.props.category +
-        "/" +
-        this.props.id
-    );
-
     const selectedCategory = this.props.categoryFields[this.props.category];
     const cardTitle = (
-      <li id="-1">
+      <li key="-1" id="-1">
         <h2>
           {this.props.results.name
             ? this.props.results.name
@@ -36,13 +25,8 @@ class CardExpanded extends React.Component {
         <ul className="card-expanded" onClick={this.props.expandCard}>
           {cardTitle}
           {selectedCategory.map((value, index) => {
-            console.log("value", value);
-            console.log(
-              "this.props.results[value.name]",
-              this.props.results[value.name]
-            );
             if (value.name === "description") {
-              return <li id={index}>{this.props.results[value.name]}</li>;
+              return <li key={index} id={index}>{this.props.results[value.name]}</li>;
             } else if (value.unit) {
               // If the value has a unit (set as state variable)
               if (
@@ -51,7 +35,7 @@ class CardExpanded extends React.Component {
               ) {
                 // Special Case - do not use the unit (years) when age is empty or N/A
                 return (
-                  <li id={index}>
+                  <li key={index} id={index}>
                     <h5>{value.label}:</h5> {this.props.results[value.name]}
                   </li>
                 );
@@ -65,7 +49,7 @@ class CardExpanded extends React.Component {
                   ></img>
                 );
                 return (
-                  <li id={index}>
+                  <li key={index} id={index}>
                     <h5>{value.label}:</h5> {this.props.results[value.name]}{" "}
                     {rottenTomatoes}
                   </li>
@@ -74,7 +58,7 @@ class CardExpanded extends React.Component {
                 // Special Case - only use km^2 when surface water is greater than 0
                 if (this.props.results[value.name] > 0) {
                   return (
-                    <li id={index}>
+                    <li key={index} id={index}>
                       <h5>{value.label}:</h5> {this.props.results[value.name]}{" "}
                       {value.unit}
                       <sup>2</sup>
@@ -82,7 +66,7 @@ class CardExpanded extends React.Component {
                   );
                 } else if (this.props.results[value.name] === 0) {
                   return (
-                    <li id={index}>
+                    <li key={index} id={index}>
                       <h5>{value.label}:</h5> None
                     </li>
                   );
@@ -90,7 +74,7 @@ class CardExpanded extends React.Component {
               } else {
                 // Default Case - append the unit to the value (if unit is set)
                 return (
-                  <li id={index}>
+                  <li key={index} id={index}>
                     <h5>{value.label}:</h5> {this.props.results[value.name]}{" "}
                     {value.unit}
                   </li>
@@ -99,13 +83,13 @@ class CardExpanded extends React.Component {
             } else {
               // If the value does not have a unit (set as a state variable)
               return (
-                <li id={index}>
+                <li key={index} id={index}>
                   <h5>{value.label}:</h5> {this.props.results[value.name]}
                 </li>
               );
             }
             return (
-              <li id={index}>
+              <li key={index} id={index}>
                 <h5>{value.label}:</h5> {this.props.results[value.name]}
               </li>
             );
