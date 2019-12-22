@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/studio-ghibli-search/static/css/main.43bd08e1.chunk.css",
-    "main.js": "/studio-ghibli-search/static/js/main.3f92dba9.chunk.js",
-    "main.js.map": "/studio-ghibli-search/static/js/main.3f92dba9.chunk.js.map",
+    "main.css": "/studio-ghibli-search/static/css/main.723cf66d.chunk.css",
+    "main.js": "/studio-ghibli-search/static/js/main.7e9b7da5.chunk.js",
+    "main.js.map": "/studio-ghibli-search/static/js/main.7e9b7da5.chunk.js.map",
     "runtime-main.js": "/studio-ghibli-search/static/js/runtime-main.f420d521.js",
     "runtime-main.js.map": "/studio-ghibli-search/static/js/runtime-main.f420d521.js.map",
-    "static/js/2.b8cc4eea.chunk.js": "/studio-ghibli-search/static/js/2.b8cc4eea.chunk.js",
-    "static/js/2.b8cc4eea.chunk.js.map": "/studio-ghibli-search/static/js/2.b8cc4eea.chunk.js.map",
+    "static/js/2.77839379.chunk.js": "/studio-ghibli-search/static/js/2.77839379.chunk.js",
+    "static/js/2.77839379.chunk.js.map": "/studio-ghibli-search/static/js/2.77839379.chunk.js.map",
     "index.html": "/studio-ghibli-search/index.html",
-    "precache-manifest.65e78d7c2ffb7b490f1e349cc54f5f19.js": "/studio-ghibli-search/precache-manifest.65e78d7c2ffb7b490f1e349cc54f5f19.js",
+    "precache-manifest.d1a0b6ceb089aff19b2a15395048a03b.js": "/studio-ghibli-search/precache-manifest.d1a0b6ceb089aff19b2a15395048a03b.js",
     "service-worker.js": "/studio-ghibli-search/service-worker.js",
-    "static/css/main.43bd08e1.chunk.css.map": "/studio-ghibli-search/static/css/main.43bd08e1.chunk.css.map",
-    "static/js/2.b8cc4eea.chunk.js.LICENSE": "/studio-ghibli-search/static/js/2.b8cc4eea.chunk.js.LICENSE",
+    "static/css/main.723cf66d.chunk.css.map": "/studio-ghibli-search/static/css/main.723cf66d.chunk.css.map",
+    "static/js/2.77839379.chunk.js.LICENSE": "/studio-ghibli-search/static/js/2.77839379.chunk.js.LICENSE",
     "static/media/home-24px.svg": "/studio-ghibli-search/static/media/home-24px.5924881c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f420d521.js",
-    "static/js/2.b8cc4eea.chunk.js",
-    "static/css/main.43bd08e1.chunk.css",
-    "static/js/main.3f92dba9.chunk.js"
+    "static/js/2.77839379.chunk.js",
+    "static/css/main.723cf66d.chunk.css",
+    "static/js/main.7e9b7da5.chunk.js"
   ]
 }
