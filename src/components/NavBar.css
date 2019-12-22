@@ -6,25 +6,18 @@ nav {
   align-items: center;
 }
 
-.nav-title, .nav-links {
-  padding: 0 1rem;
-  margin: 0;
-}
-
 .nav-title {
-  font-size: 1.5em;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
 }
 
 .nav-links {
   display: flex;
+  padding: 0.5rem 1rem;
+  margin: 0;
 }
 
 .nav-title:hover, .nav-links > li:hover {
   cursor: pointer;
   color: grey;
-}
-
-h3, li {
-  padding: 0.5rem 0.25rem;
-  margin: 0.5rem 0.25rem;
 }

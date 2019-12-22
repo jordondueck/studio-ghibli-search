@@ -1,22 +1,18 @@
 import React from "react";
-import "./NavBar.css";
 import homeButton from "../images/home-24px.svg";
+import "./NavBar.css";
 
 const NavBar = ({ category, selectedCategoryIndex, handleNav, handleHome }) => {
   if (selectedCategoryIndex === -1) {
     return (
       <nav>
-        <div className="nav-title">
-          <h3 onClick={handleHome}>Studio Ghibli Search</h3>
-        </div>
+        <h3 className="nav-title" onClick={handleHome}>Studio Ghibli Search</h3>
       </nav>
     );
   } else {
     return (
       <nav>
-        <div className="nav-title">
-          <h3 onClick={handleHome}>Studio Ghibli Search</h3>
-        </div>
+        <h3 className="nav-title" onClick={handleHome}>Studio Ghibli Search</h3>
         <ul className="nav-links">
           <li className="home-link" onClick={handleHome}>
             <img src={homeButton} alt="Home"></img>

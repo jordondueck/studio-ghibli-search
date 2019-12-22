@@ -4,17 +4,16 @@ import "./Dashboard.css";
 
 const Dashboard = ({ category, handleNav }) => {
   return (
-    <div>
-      <h3>Select a category</h3>
-
-    <div className="dashboard">
-      {category.map((name, i) => {
-        return (
-          <DashboardItem key={i} id={i} name={name} handleNav={handleNav} />
+    <section className="dashboard">
+      <h3 className="dashboard-title">Select a category</h3>
+      <section className="dashboard-menu">
+        {category.map((name, i) => {
+          return (
+            <DashboardItem key={i} id={i} name={name} handleNav={handleNav} />
           );
         })}
-    </div>
-        </div>
+      </section>
+    </section>
   );
 };
 

@@ -1,8 +1,8 @@
-.dashboard-item {
+.dashboard--item {
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
-  text-align: left;
+  text-align: center;
   background: rgb(246, 249, 252);
   border: 1px solid;
   border-color: lightblue;
@@ -13,10 +13,9 @@
   max-width: 200px;
   height: auto;
   font-size: 0.8rem;
-  overflow: hidden;
 }
 
-.dashboard-item:hover {
+.dashboard--item:hover {
   transform: scale(1.05);
   transition: 0.8s;
   cursor: pointer;

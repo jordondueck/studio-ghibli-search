@@ -36,106 +36,94 @@ const Card = props => {
 
   const [cardExpanded, setCardExpanded] = useState(false);
 
-  const expandCard = event => {
+  const toggleCard = event => {
     setCardExpanded(!cardExpanded);
   };
 
   const selectedCategory = categoryFields[props.category.toLowerCase()];
   const cardTitle = (
-    <li key="-1" id="-1">
+    <li className="card--title" key="-1" id="-1">
       <h3>{props.name ? props.name : props.title}</h3>
     </li>
   );
-  // const readMore = <button className="readMore">(read more)</button>
+  // const readMore = <button className="read-more">(read more)</button>
   const readMore2 = "...";
-  const clickToExpand = (
-    <button className="clickToExpand">Click to expand</button>
-  );
+  const clickToExpand = <button className="card--button">View</button>;
 
   if (!cardExpanded) {
     return (
-      <ul className="card" onClick={expandCard}>
-        <div className="flexDiv">
-          {cardTitle}
-          {selectedCategory.map((value, index) => {
-            if (value.name === "description") {
-              if (props[value.name].length < 250) {
-                return (
-                  <li key={index} id={index}>
-                    {props[value.name]}
-                  </li>
-                );
-              } else {
-                return (
-                  <li key={index} id={index}>
-                    {props[value.name].slice(0, 250)}
-                    {readMore2}
-                  </li>
-                );
-              }
-            } else if (value.unit) {
-              // If the value has a unit (set as state variable)
-              if (value.name === "age" && isNaN(props[value.name])) {
-                // Special Case - do not use the unit (years) when age is empty or N/A
-                return (
-                  <li key={index} id={index}>
-                    <h5>{value.label}:</h5> {props[value.name]}
-                  </li>
-                );
-              } else if (value.name === "rt_score") {
-                // Special Case - add "rotten tomato" graphic as the unit
-                const rottenTomatoes = (
-                  <img
-                    className="rotten-tomato"
-                    src={tomato}
-                    alt="rotten tomato"
-                  ></img>
-                );
-                return (
-                  <li key={index} id={index}>
-                    <h5>{value.label}:</h5> {props[value.name]} {rottenTomatoes}
-                  </li>
-                );
-              } else if (value.name === "surface_water") {
-                // Special Case - only use km^2 when surface water is greater than 0
-                // if (props[value.name] > 0) {
-                  return (
-                    <li key={index} id={index}>
-                      <h5>{value.label}:</h5> {props[value.name]} {value.unit}
-                      <sup>2</sup>
-                    </li>
-                  );
-                // } else if (props[value.name] === 0) {
-                //   return (
-                //     <li key={index} id={index}>
-                //       <h5>{value.label}:</h5> None
-                //     </li>
-                //   );
-                // }
-              } else {
-                // Default Case - append the unit to the value (if unit is set)
-                return (
-                  <li key={index} id={index}>
-                    <h5>{value.label}:</h5> {props[value.name]} {value.unit}
-                  </li>
-                );
-              }
-            } else {
-              // If the value does not have a unit (set as a state variable)
+      <ul className="card" onClick={toggleCard}>
+        {cardTitle}
+        {selectedCategory.map((value, index) => {
+          if (value.name === "description") {
+            if (props[value.name].length < 250) {
               return (
-                <li key={index} id={index}>
-                  <h5>{value.label}:</h5> {props[value.name]}
+                <li className="card--content" key={index} id={index}>
+                  {props[value.name]}
+                </li>
+              );
+            } else {
+              return (
+                <li className="card--content" key={index} id={index}>
+                  {props[value.name].slice(0, 250)}
+                  {readMore2}
                 </li>
               );
             }
-            // return (
-            //   <li key={index} id={index}>
-            //     <h5>{value.label}:</h5> {props[value.name]}
-            //   </li>
-            // );
-          })}
-        </div>
-        <li className="buttonContainer">{clickToExpand}</li>
+          } else if (value.unit) {
+            // If the value has a unit (set as state variable)
+            if (value.name === "age" && isNaN(props[value.name])) {
+              // Special Case - do not use the unit (years) when age is empty or N/A
+              return (
+                <li className="card--content" key={index} id={index}>
+                  <h5 className="card--label">{value.label}:</h5>{" "}
+                  {props[value.name]}
+                </li>
+              );
+            } else if (value.name === "rt_score") {
+              // Special Case - add "rotten tomato" graphic as the unit
+              const rottenTomatoes = (
+                <img
+                  className="rotten-tomato"
+                  src={tomato}
+                  alt="rotten tomato"
+                ></img>
+              );
+              return (
+                <li className="card--content" key={index} id={index}>
+                  <h5 className="card--label">{value.label}:</h5>{" "}
+                  {props[value.name]} {rottenTomatoes}
+                </li>
+              );
+            } else if (value.name === "surface_water") {
+              // Special Case - append ^2 (superscript) to the unit
+              return (
+                <li className="card--content" key={index} id={index}>
+                  <h5 className="card--label">{value.label}:</h5>{" "}
+                  {props[value.name]} {value.unit}
+                  <sup>2</sup>
+                </li>
+              );
+            } else {
+              // Default Case - append the unit to the value (if unit is set)
+              return (
+                <li className="card--content" key={index} id={index}>
+                  <h5 className="card--label">{value.label}:</h5>{" "}
+                  {props[value.name]} {value.unit}
+                </li>
+              );
+            }
+          } else {
+            // If the value does not have a unit (set as a state variable)
+            return (
+              <li className="card--content" key={index} id={index}>
+                <h5 className="card--label">{value.label}:</h5>{" "}
+                {props[value.name]}
+              </li>
+            );
+          }
+        })}
+        <li className="card--button--container">{clickToExpand}</li>
       </ul>
     );
   } else {
@@ -145,7 +133,7 @@ const Card = props => {
         category={props.category.toLowerCase()}
         results={props}
         categoryFields={categoryFields}
-        expandCard={expandCard}
+        toggleCard={toggleCard}
       />
     );
   }

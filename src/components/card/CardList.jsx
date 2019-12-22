@@ -4,21 +4,18 @@ import "./CardList.css";
 
 const CardList = ({ category, results }) => {
   return (
-    <div>
-      <h2>{category}</h2>
-      <div className="cardList">
-        {results.map(result => {
-          return (
-            <Card
-              category={category}
-              key={result.id}
-              id={result.id}
-              {...result}
-            />
-          );
-        })}
-      </div>
-    </div>
+    <section className="card-list">
+      {results.map(result => {
+        return (
+          <Card
+            category={category}
+            key={result.id}
+            id={result.id}
+            {...result}
+          />
+        );
+      })}
+    </section>
   );
 };
 

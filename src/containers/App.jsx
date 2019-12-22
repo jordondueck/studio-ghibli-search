@@ -35,7 +35,7 @@ class App extends Component {
   render() {
     if (this.state.selectedCategoryIndex === -1) {
       return (
-        <div className="container">
+        <section className="container">
           <NavBar
             category={this.state.category}
             selectedCategoryIndex={this.state.selectedCategoryIndex}
@@ -49,11 +49,11 @@ class App extends Component {
             />
           </section>
           <Footer />
-        </div>
+        </section>
       );
     } else {
       return (
-        <div className="container">
+        <section className="container">
           <NavBar
             category={this.state.category}
             selectedCategoryIndex={this.state.selectedCategoryIndex}
@@ -67,7 +67,7 @@ class App extends Component {
             />
           </section>
           <Footer />
-        </div>
+        </section>
       );
     }
   }

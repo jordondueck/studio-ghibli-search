@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CardList from "./card/CardList";
-// import "./Results.css";
+import "./Results.css";
 
 class Results extends Component {
   constructor(props) {
@@ -31,10 +31,13 @@ class Results extends Component {
 
   render() {
     return (
-      <CardList
-        category={this.props.selectedCategory}
-        results={this.state.results}
-      />
+      <section>
+        <h2 className="category--title">{this.props.selectedCategory}</h2>
+        <CardList
+          category={this.props.selectedCategory}
+          results={this.state.results}
+        />
+      </section>
     );
   }
 }

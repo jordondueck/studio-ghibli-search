@@ -1,9 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  /* grid-template-columns: 1fr; */
   justify-content: space-between;
-  text-align: left;
   background: rgb(246, 249, 252);
   border: 1px solid;
   border-color: lightblue;
@@ -13,101 +11,31 @@
   width: 80%;
   max-width: 400px;
   height: auto;
-  /* flex-grow: 1; */
-  font-size: 0.8rem;
-  overflow: hidden;
-}
-
-.flexDiv {
-  display: flex;
-  flex-direction: column;
-}
-
-.card-expanded {
-  /* position: fixed; */
-  align-self: center;
-  justify-self: center;
-  text-align: left;
-  background: rgb(246, 249, 252);
-  border: 1px solid;
-  border-color: lightblue;
-  border-radius: 0.25rem;
-  box-shadow: 0.25rem 0.25rem 0.25rem darkslategrey;
-  padding: 0.5rem;
-  width: 50%;
-  max-width: 600px;
-  height: auto;
-  /* flex-grow: 1; */
-  font-size: 0.8rem;
-  overflow: hidden;
-}
-
-.card, .card-expanded:hover {
-  cursor: pointer;
-}
-
-.cardBg {
-  position: fixed;
-  display: flex;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #FFFFFF;
-  justify-content: center;
 }
 
 .card:hover {
+  cursor: pointer;
   transform: scale(1.05);
   transition: 0.8s;
 }
 
-h2, h3 {
+.card--title {
+  padding: 0.75rem 1.25rem;
   text-align: center;
 }
 
-h2, h3, li {
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-li {
+.card--content {
+  padding: 0.5rem 0.5rem 0.25rem;
   font-size: 0.9rem;
+  text-align: left;
 }
 
-h5 {
-  font-weight: bold;
+.card--label {
   font-size: 0.9rem;
-  margin: 0;
   display: inline-block;
 }
 
-.rotten-tomato {
-  width: 1rem;
-  height: 1rem;
-}
-
-.readMore {
-  display: inline-block;
-  border: 1px solid;
-  border-color: lightblue;
-  border-radius: 0.25rem;
-    padding: 0.25rem;
-    margin: 0;
-    text-decoration: none;
-    background: none;
-    font-size: 0.9rem;
-    cursor: pointer;
-    text-align: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-.clickToExpand {
-  /* display: inline-block; */
+.card--button {
   border: 1px solid;
   border-color: lightblue;
   border-radius: 0.25rem;
@@ -120,15 +48,34 @@ h5 {
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
-  /* transition: background 250ms ease-in-out,  */
-              /* transform 150ms ease; */
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-.buttonContainer {
+.card--button--container {
   display: flex;
   justify-content: center;
   align-self: center;
-  padding-bottom: 0;
+  padding: 0.25rem 0 0;
 }
+
+.rotten-tomato {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* .read-more {
+  display: inline-block;
+  border: 1px solid;
+  border-color: lightblue;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  margin: 0;
+  text-decoration: none;
+  background: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+} */
