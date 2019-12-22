@@ -1,24 +1,23 @@
 {
   "files": {
-    "main.css": "/studio-ghibli-search/static/css/main.a208fd6f.chunk.css",
-    "main.js": "/studio-ghibli-search/static/js/main.b7f5b06b.chunk.js",
-    "main.js.map": "/studio-ghibli-search/static/js/main.b7f5b06b.chunk.js.map",
-    "runtime-main.js": "/studio-ghibli-search/static/js/runtime-main.fab4ab83.js",
-    "runtime-main.js.map": "/studio-ghibli-search/static/js/runtime-main.fab4ab83.js.map",
-    "static/js/2.0ca1b559.chunk.js": "/studio-ghibli-search/static/js/2.0ca1b559.chunk.js",
-    "static/js/2.0ca1b559.chunk.js.map": "/studio-ghibli-search/static/js/2.0ca1b559.chunk.js.map",
+    "main.css": "/studio-ghibli-search/static/css/main.43bd08e1.chunk.css",
+    "main.js": "/studio-ghibli-search/static/js/main.3f92dba9.chunk.js",
+    "main.js.map": "/studio-ghibli-search/static/js/main.3f92dba9.chunk.js.map",
+    "runtime-main.js": "/studio-ghibli-search/static/js/runtime-main.f420d521.js",
+    "runtime-main.js.map": "/studio-ghibli-search/static/js/runtime-main.f420d521.js.map",
+    "static/js/2.b8cc4eea.chunk.js": "/studio-ghibli-search/static/js/2.b8cc4eea.chunk.js",
+    "static/js/2.b8cc4eea.chunk.js.map": "/studio-ghibli-search/static/js/2.b8cc4eea.chunk.js.map",
     "index.html": "/studio-ghibli-search/index.html",
-    "precache-manifest.c4f6830a06ee11336458d175a033b2c8.js": "/studio-ghibli-search/precache-manifest.c4f6830a06ee11336458d175a033b2c8.js",
+    "precache-manifest.65e78d7c2ffb7b490f1e349cc54f5f19.js": "/studio-ghibli-search/precache-manifest.65e78d7c2ffb7b490f1e349cc54f5f19.js",
     "service-worker.js": "/studio-ghibli-search/service-worker.js",
-    "static/css/main.a208fd6f.chunk.css.map": "/studio-ghibli-search/static/css/main.a208fd6f.chunk.css.map",
-    "static/media/ghibli-char-group.png": "/studio-ghibli-search/static/media/ghibli-char-group.1a6b5a08.png",
-    "static/media/ghibli-footer.png": "/studio-ghibli-search/static/media/ghibli-footer.dcf69b53.png",
-    "static/media/ghibli-header.png": "/studio-ghibli-search/static/media/ghibli-header.cef8d609.png"
+    "static/css/main.43bd08e1.chunk.css.map": "/studio-ghibli-search/static/css/main.43bd08e1.chunk.css.map",
+    "static/js/2.b8cc4eea.chunk.js.LICENSE": "/studio-ghibli-search/static/js/2.b8cc4eea.chunk.js.LICENSE",
+    "static/media/home-24px.svg": "/studio-ghibli-search/static/media/home-24px.5924881c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.fab4ab83.js",
-    "static/js/2.0ca1b559.chunk.js",
-    "static/css/main.a208fd6f.chunk.css",
-    "static/js/main.b7f5b06b.chunk.js"
+    "static/js/runtime-main.f420d521.js",
+    "static/js/2.b8cc4eea.chunk.js",
+    "static/css/main.43bd08e1.chunk.css",
+    "static/js/main.3f92dba9.chunk.js"
   ]
 }
